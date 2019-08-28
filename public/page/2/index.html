@@ -136,6 +136,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于Grid布局的使用指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/16/关于Grid布局的使用指南/">关于Grid布局的使用指南</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/16/关于Grid布局的使用指南/" class="archive-article-date">
+  	<time datetime="2017-12-16T15:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>之前讨论过footer置底的几种方法, 里面谈及到能通过Grid布局实现. 而最近各大浏览器又频频宣布对Grid的支持, 可想而知Grid会是继Flex的强大后起之秀.<br>正好笔者也对Grid了解甚少, 正好来个粗略掌握.</p>
+<h4 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h4><p>下面例子属性看不懂不要急, 我会慢慢解释</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/* 第一个例子 */</span><br><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-rows: 100px 100px 100px;</span><br><span class="line">  grid-template-columns: 150px 150px 150px;</span><br><span class="line">  text-align: center;  </span><br><span class="line">  font-size: 40px;</span><br><span class="line">&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">  border: 1px solid #000;</span><br><span class="line">  display: inline-grid;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item-1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item-2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item-3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item-4"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item-5"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item-6"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sub-item"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/12/16/关于Grid布局的使用指南/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/16/关于Grid布局的使用指南/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-我搭建java后台遇到的一些难题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -795,77 +862,6 @@ div {
 
 
   
-    <article id="post-浅述CSS实现垂直居中水平居中的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/25/浅述CSS实现垂直居中水平居中的方法/">浅述CSS实现垂直居中水平居中的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/25/浅述CSS实现垂直居中水平居中的方法/" class="archive-article-date">
-  	<time datetime="2017-07-25T04:14:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>最近看面试题有看到类似实现方式</p>
-<h4 id="1-第一种-也是我最常用的"><a href="#1-第一种-也是我最常用的" class="headerlink" title="1. 第一种, 也是我最常用的."></a>1. 第一种, 也是我最常用的.</h4><pre><code>{
-  position: absolute;
-  left: 0; top: 0; bottom: 0; right:0;
-  margin: auto;
-}</code></pre><p>这里的margin: auto, 相当于margin-top: 0等四边; 此方法支持ie8-10, 也支持图片居中; 缺点就是要声明宽高;</p>
-<h4 id="2-负外边距"><a href="#2-负外边距" class="headerlink" title="2. 负外边距."></a>2. 负外边距.</h4>
-        
-          <a class="article-more-a" href="/2017/07/25/浅述CSS实现垂直居中水平居中的方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/25/浅述CSS实现垂直居中水平居中的方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -962,11 +958,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -982,15 +978,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

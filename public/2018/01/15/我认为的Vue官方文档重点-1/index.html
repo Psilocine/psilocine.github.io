@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://psilocine.github.io/2018/01/15/我认为的Vue官方文档重点-1/3_template_show.jpg">
 <meta property="og:image" content="https://psilocine.github.io/2018/01/15/我认为的Vue官方文档重点-1/1_textarea_1.jpg">
 <meta property="og:image" content="https://psilocine.github.io/2018/01/15/我认为的Vue官方文档重点-1/1_textarea_2.jpg">
-<meta property="og:updated_time" content="2019-08-12T14:14:41.110Z">
+<meta property="og:updated_time" content="2019-08-27T01:26:31.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我认为的Vue官方文档重点(1)">
 <meta name="twitter:description" content="写在前面最近想系统学习一下Vue, 有时候看官方文档太庞大复杂, 会失去看下去的欲望, 不妨来看看我整理的一些知识. 当然前提是你懂基本的Vue语法和结构文章大体会根据Vue官方文档(教程2.X)提供的学习路线本文从 Vue实例 -&amp;gt; 组件 Vue实例1.Vue是数据驱动的, 但如果在创建实例后再去给Vue添加属性的话, 新添加的属性是不具备响应式的">
@@ -192,7 +192,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  fullName: &#123;</span><br><span class="line">    <span class="comment">// getter</span></span><br><span class="line">    <span class="keyword">get</span>: function () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">' '</span> + <span class="keyword">this</span>.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// setter</span></span><br><span class="line">    <span class="keyword">set</span>: function (newValue) &#123;</span><br><span class="line">      <span class="keyword">var</span> names = newValue.split(<span class="string">' '</span>)</span><br><span class="line">      <span class="keyword">this</span>.firstName = names[<span class="number">0</span>]</span><br><span class="line">      <span class="keyword">this</span>.lastName = names[names.length - <span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Class-与-Style-绑定"><a href="#Class-与-Style-绑定" class="headerlink" title="Class 与 Style 绑定"></a>Class 与 Style 绑定</h3><p>1.见模板语法的第3点, 另多补充三元表达式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"isActive ? activeClass : ''"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"isActive ? activeClass : ''"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <p>2.v-bind:style添加css属性, 会自动侦测并添加浏览器前缀, 和postcss的autoprefixer相似</p>
 <h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><p>1.v-if也能给多个元素加, 和template标签配合即可. 最终的渲染结果不包括template标签</p>
@@ -245,7 +245,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">...</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 可以保留其内部的状态或者避免重新渲染 --&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>9.$refs 只在组件渲染完成后才填充, 并且它是非响应式的. 它仅仅是一个直接操作子组件的应急方案——应当避免在模板或计算属性中使用 $refs</p>
-<p>前往<a href="https://psilocine.github.io/2018/03/03/%E6%88%91%E8%AE%A4%E4%B8%BA%E7%9A%84Vue%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%87%8D%E7%82%B9-2/" target="_blank" rel="noopener">第二篇</a></p>
+<p>前往<a href="https://psilocine.github.io/2018/03/03/%E6%88%91%E8%AE%A4%E4%B8%BA%E7%9A%84Vue%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E9%87%8D%E7%82%B9-2/">第二篇</a></p>
 
       
 
@@ -463,11 +463,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,15 +483,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
