@@ -157,36 +157,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>绝不推荐脱产寻找工作机会, 特别是非一线城市(具有时效性). 笔者始终觉得, 面试是快速提升个人实力的有效方式, 但是面试的状态真的是又累又焦虑, 也是笔者第一次经历社招, 深深觉得社招对工作年限的严格性, 有个工作3年的同事也在找工作(笔者工作1年), 但是他的面试机会比我多一倍不止, 能力虽有差距, 但是他分享的面经发现笔者能答上大部分, 着实难受. 本文记下近期面试的印象深刻的题</p>
-<h4 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h4><ol>
-<li><p>设计模式 了解单例和工厂吗 应用场景是什么</p>
-</li>
-<li><p>es5和es6是如何继承的</p>
-</li>
-<li><p>原生JavaScript设计组件</p>
-</li>
-<li><p>jsonp工作原理, 为什么不是真正的ajax</p>
-</li>
-<li><p>requestAnimationFrame原理</p>
-</li>
-<li><p>[‘1’,’2’,’3’].map(parseInt)的输出, 为什么</p>
-</li>
-</ol>
-<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><ol>
-<li><p>预检请求options作用</p>
-</li>
-<li><p>对缓存的理解</p>
-</li>
-</ol>
-<h4 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h4><ol>
-<li><p>Vue原理详细阐述</p>
-</li>
-<li><p>mpVue原理详细阐述</p>
-</li>
-</ol>
-<h4 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h4><ol>
-<li>前端组件化 模块化 工程化的理解</li>
-</ol>
+<h4 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h4><h5 id="设计模式-了解单例和工厂吗-应用场景是什么"><a href="#设计模式-了解单例和工厂吗-应用场景是什么" class="headerlink" title="设计模式: 了解单例和工厂吗 应用场景是什么"></a>设计模式: 了解单例和工厂吗 应用场景是什么</h5><ol>
+<li>单例模式(Singleton)的特点是只有一个实例对象, 且该类能自行创建这个实例的一种模式, 单例类对外提供一个访问该单例的全局访问点<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> createWindow = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> div;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!div) &#123;</span><br><span class="line">            div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">            div.innerHTML = <span class="string">'a toast'</span>;</span><br><span class="line">            div.style.display = <span class="string">'none'</span>;</span><br><span class="line">            <span class="comment">// ...</span></span><br><span class="line">            <span class="built_in">document</span>.body.appendChild(div);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> div;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'id'</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> win = createWindow();</span><br><span class="line">    win.style.display = <span class="string">'block'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 点击创建并展示弹窗, 关闭时移除弹窗dom, 频繁dom操作影响性能, 单例只实例化一次</span></span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<p>应用场景: 某类只要求生成一个对象的时候; 对象需要被共享的时候; 某类频繁实例化和频繁被销毁的时候;</p>
+        
+          <a class="article-more-a" href="/2019/08/27/2019年面试总结/#more">more >></a>
+        
       
 
       
@@ -204,6 +183,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -255,20 +238,6 @@
 <li><p>原生的生命周期onLoad、onReady方法比created、mounted方法执行的更早，使用前者会相对减少白屏时间。（但mpvue官方不推荐使用原生的生命周期</p>
 </li>
 <li><p>我们熟悉的asyncComputed插件在小程序上有弊端：所有定义过asyncComputed方法的页面都会在小程序首页加载时执行方法，意味着http request更多。</p>
-</li>
-</ul>
-<h3 id="Template相关"><a href="#Template相关" class="headerlink" title="Template相关"></a>Template相关</h3><ul>
-<li><p>不支持在template标签里使用部分复杂的Js渲染表达式操作，只支持三元表达式。</p>
-</li>
-<li><p>不支持使用methods定义的函数。</p>
-</li>
-<li><p>不支持加“this”，如data定义了maysa变量，template中“”是不可行的。</p>
-</li>
-<li><p>不支持在使用组件时给其添加样式(style)或者新增class属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--下述情况均无法成功渲染--&gt;</span><br><span class="line">&lt;Child class=&quot;maysa-class&quot; /&gt;</span><br><span class="line">&lt;Child style=&quot;width: 100%&quot; /&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
         
           <a class="article-more-a" href="/2019/06/12/微信小程序-mpVue-部分踩坑实录/#more">more >></a>
         
@@ -400,7 +369,7 @@
       
         <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>console.log, console.time相信大家都不陌生, 平时除了打断点就是打log来调试, 可谓是居家旅行必备神器. 今天就来扒扒除了以上常见的还有哪些可能其貌不扬的命令.</p>
 <h4 id="log"><a href="#log" class="headerlink" title="log"></a>log</h4><ol>
-<li>log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.<br><img src="log_1.jpg" alt="log_1">
+<li>log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.
         
           <a class="article-more-a" href="/2018/05/10/console命令大全/#more">more >></a>
         

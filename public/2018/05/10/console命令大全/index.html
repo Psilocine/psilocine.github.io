@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/table_2.jpg">
 <meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/table_3.jpg">
 <meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/trace_1.jpg">
-<meta property="og:updated_time" content="2019-08-27T01:26:31.613Z">
+<meta property="og:updated_time" content="2019-08-28T01:28:36.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console命令大全">
 <meta name="twitter:description" content="写在前面console.log, console.time相信大家都不陌生, 平时除了打断点就是打log来调试, 可谓是居家旅行必备神器. 今天就来扒扒除了以上常见的还有哪些可能其貌不扬的命令. log log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.">
@@ -180,7 +180,8 @@
       
         <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>console.log, console.time相信大家都不陌生, 平时除了打断点就是打log来调试, 可谓是居家旅行必备神器. 今天就来扒扒除了以上常见的还有哪些可能其貌不扬的命令.</p>
 <h4 id="log"><a href="#log" class="headerlink" title="log"></a>log</h4><ol>
-<li>log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.<br><img src="log_1.jpg" alt="log_1"><a id="more"></a></li>
+<li>log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.<a id="more"></a>
+<img src="log_1.jpg" alt="log_1"></li>
 <li>此命令大家很熟悉了, 只有一点需要注意: 结合字符串时, 除了和对象共用会出现[object Object]而显示不出正确内容外, 和其他的类型都能良好搭配. 这是因为object类型和string类型相加时, 会触发toString()方法(其他类型也会.<br><img src="log_4.jpg" alt="log_4"><br>除了log外, 还有info, warn, error, 其实和log本质是一样的, 只不过在输出是加个icon和背景色.<br><img src="log_2.jpg" alt="log_2"><br>在Ff火狐下, info也有图标.<br><img src="log_3.jpg" alt="log_3"></li>
 <li>log还支持占位符, 如下图. 但只支持字符串（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）<br><img src="log_5.jpg" alt="log_5"></li>
 </ol>

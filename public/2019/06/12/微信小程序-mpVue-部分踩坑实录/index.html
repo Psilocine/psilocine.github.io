@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面下述只是笔者现阶段遇到的问题，时效性不强，后续mpVue更新可能有所出入。欢迎大家留言补充。 生命周期相关 使用mpvue时，其所有页面的created方法都会在小程序首次加载时执行。  原生的生命周期onLoad、onReady方法比created、mounted方法执行的更早，使用前者会相对减少白屏时间。（但mpvue官方不推荐使用原生的生命周期  我们熟悉的asyncComputed">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-27T01:26:31.648Z">
+<meta property="og:updated_time" content="2019-08-28T01:34:36.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序 &amp;&amp; mpVue 部分踩坑实录">
 <meta name="twitter:description" content="写在前面下述只是笔者现阶段遇到的问题，时效性不强，后续mpVue更新可能有所出入。欢迎大家留言补充。 生命周期相关 使用mpvue时，其所有页面的created方法都会在小程序首次加载时执行。  原生的生命周期onLoad、onReady方法比created、mounted方法执行的更早，使用前者会相对减少白屏时间。（但mpvue官方不推荐使用原生的生命周期  我们熟悉的asyncComputed">
@@ -166,9 +166,8 @@
 <li><p>原生的生命周期onLoad、onReady方法比created、mounted方法执行的更早，使用前者会相对减少白屏时间。（但mpvue官方不推荐使用原生的生命周期</p>
 </li>
 <li><p>我们熟悉的asyncComputed插件在小程序上有弊端：所有定义过asyncComputed方法的页面都会在小程序首页加载时执行方法，意味着http request更多。</p>
-</li>
-</ul>
-<h3 id="Template相关"><a href="#Template相关" class="headerlink" title="Template相关"></a>Template相关</h3><ul>
+<a id="more"></a>
+<h3 id="Template相关"><a href="#Template相关" class="headerlink" title="Template相关"></a>Template相关</h3></li>
 <li><p>不支持在template标签里使用部分复杂的Js渲染表达式操作，只支持三元表达式。</p>
 </li>
 <li><p>不支持使用methods定义的函数。</p>
@@ -180,7 +179,6 @@
 
 </li>
 </ul>
-<a id="more"></a>
 <h3 id="MpVue其余部分"><a href="#MpVue其余部分" class="headerlink" title="MpVue其余部分"></a>MpVue其余部分</h3><ul>
 <li><p>计算属性computed不能和wx.getStorageSync共用，因为wx.getStorageSync只会取第一次。（认为是没有双向绑定，所以不会实时更新</p>
 </li>
