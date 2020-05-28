@@ -136,6 +136,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于Flex布局的使用指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/23/关于Flex布局的使用指南/">关于Flex布局的使用指南</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/23/关于Flex布局的使用指南/" class="archive-article-date">
+  	<time datetime="2018-02-23T15:56:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>flex布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧.</p>
+<h4 id="基本布局"><a href="#基本布局" class="headerlink" title="基本布局"></a>基本布局</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class='father'&gt; // flex container</span><br><span class="line">  &lt;div calss='son son-1'&gt;1&lt;/div&gt; // flex item</span><br><span class="line">  &lt;div calss='son son-2'&gt;2&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="flex-container属性"><a href="#flex-container属性" class="headerlink" title="flex container属性"></a>flex container属性</h4><p>flex规定flex container的横向为主轴(main axis), 纵向为交叉轴(cross axis)<br>1.flex-direction 指定flex item是如何布局的. 默认为row, 即flex item从左至右横向排列</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  flex-direction: row / row-reverse / column / column-reverse;</span><br><span class="line">                        (横向右至左) (纵向上至下) (纵向下至上)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/02/23/关于Flex布局的使用指南/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/23/关于Flex布局的使用指南/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-我认为的Vue官方文档重点-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -432,10 +501,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>Js的for方法有几种了, 你有没有仔细思考过? 性能如何?<br>除了原生的前测试循环for(;;), 还有es5(for-in),(forEach) 以及es6新方法(for-of)</p>
-<h4 id="普通for循环-for"><a href="#普通for循环-for" class="headerlink" title="普通for循环: for(;;)"></a>普通for循环: for(;;)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 当length是个不变的定值时, 可以赋予变量来提高性能</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>Js 的 for 方法有几种了, 你有没有仔细思考过? 性能如何?<br>除了原生的前测试循环 for(;;), 还有 es5(for-in),(forEach) 以及 es6 新方法(for-of)</p>
+<h4 id="普通-for-循环-for"><a href="#普通-for-循环-for" class="headerlink" title="普通 for 循环: for(;;)"></a>普通 for 循环: for(;;)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 当length是个不变的定值时, 可以赋予变量来提高性能</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>其实JavaScript的Array的索引是String类型, 即arr[i]的i并不是number, 而是string. arr[1]是系统把1转成String的’1’才能使用arr[1].</p>
+<p>其实 JavaScript 的 Array 的索引是 String 类型, 即 arr[i]的 i 并不是 number, 而是 string. arr[1]是系统把 1 转成 String 的’1’才能使用 arr[1].</p>
         
           <a class="article-more-a" href="/2017/10/15/浅析Js的for循环方法/#more">more >></a>
         
@@ -502,31 +571,34 @@
       
         <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>我收集的也有我遇到过的面试题, 会持续更新.</p>
 <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><ul>
-<li><p>前端工程化的理解<br>模块化、组件化、规范化、自动化</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.模块化 将文件拆分成互相依赖的小文件, 多人协作开发后, 再进行统一的拼装.</span><br><span class="line">js模块化 commonjs amd cmd</span><br><span class="line">css模块化 命名风格. 在类前加规范, 如布局(grid)(.g-xxx) 功能(function)(.f-xxx)</span><br><span class="line"></span><br><span class="line">2.组件化 每个包含html+css+js完备的单元, 成为组件</span><br><span class="line">3.规范化 目录结构的确定, 前后端接口规范, 组件命名规范 commit描述规范</span><br><span class="line">4.自动化 简单的机械劳动, 让机器帮我们完成. 线上发布 =&gt; 使用脚本 图片<span class="tag">&lt;<span class="name">20kb</span> =&gt;</span> webpack转base64</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如何html中开启和关闭dns预读取</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- on打开 off关闭 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-dns-prefetch-control"</span> <span class="attr">content</span>=<span class="string">"off"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 方法二 通过link的rel属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"//"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>doctype的作用</p>
-</li>
+<li>前端工程化的理解<br>模块化、组件化、规范化、自动化</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.模块化 将文件拆分成互相依赖的小文件, 多人协作开发后, 再进行统一的拼装. js模块化 commonjs amd cmd</span><br><span class="line">css模块化 命名风格. 在类前加规范, 如布局(grid)(.g-xxx) 功能(function)(.f-xxx) 2.组件化</span><br><span class="line">每个包含html+css+js完备的单元, 成为组件 3.规范化 目录结构的确定, 前后端接口规范, 组件命名规范</span><br><span class="line">commit描述规范 4.自动化 简单的机械劳动, 让机器帮我们完成. 线上发布 =&gt; 使用脚本 图片<span class="tag">&lt;<span class="name">20kb</span> =&gt;</span></span><br><span class="line">webpack转base64</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如何 html 中开启和关闭 dns 预读取</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- on打开 off关闭 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-dns-prefetch-control"</span> <span class="attr">content</span>=<span class="string">"off"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 方法二 通过link的rel属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"//"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>doctype 的作用</li>
 </ul>
 <ol>
-<li>告知浏览器的解析器用什么文档标准解析这个文档,  doctype不存在或不正确会导致文档以怪异模式呈现</li>
+<li>告知浏览器的解析器用什么文档标准解析这个文档, doctype 不存在或不正确会导致文档以怪异模式呈现</li>
 </ol>
 <ul>
 <li>前端渲染和后端渲染的区别</li>
 </ul>
 <ol>
-<li>后端渲染优势: 开发速度快, 不涉及前端交互; seo友好度较高, 能够一次性渲染页面, 利于搜索引擎抓取. 劣势: 可维护性差, 因为是一次性渲染页面; 编码效率低, 前后端代码混在一起; 无法进行跨平台开发.</li>
-<li>前端渲染优势: 端口分离, 专注于前端; 可维护性高; 跨平台; 响应速度快. 劣势: 不利于seo优化; 首次开发成本较高; 安全性低.</li>
+<li>后端渲染优势: 开发速度快, 不涉及前端交互; seo 友好度较高, 能够一次性渲染页面, 利于搜索引擎抓取. 劣势: 可维护性差, 因为是一次性渲染页面; 编码效率低, 前后端代码混在一起; 无法进行跨平台开发.</li>
+<li>前端渲染优势: 端口分离, 专注于前端; 可维护性高; 跨平台; 响应速度快. 劣势: 不利于 seo 优化; 首次开发成本较高; 安全性低.</li>
 </ol>
 <ul>
-<li>canvas和svg在绘图有哪些优劣</li>
+<li>canvas 和 svg 在绘图有哪些优劣</li>
 </ul>
 <ol>
-<li>canvas依赖分辨率; 不支持事件处理器; 弱的文本渲染能力; 能够以 .png 或 .jpg 格式保存结果图像; 最适合图像密集型的游戏，其中的许多对象会被频繁重绘</li>
-<li>不依赖分辨率; 支持事件处理器; 最适合带有大型渲染区域的应用程序（比如谷歌地图）; 复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）; 不适合游戏应用</li>
+<li>canvas 依赖分辨率; 不支持事件处理器; 弱的文本渲染能力; 能够以 .png 或 .jpg 格式保存结果图像; 最适合图像密集型的游戏，其中的许多对象会被频繁重绘</li>
+<li>svg 不依赖分辨率; 支持事件处理器; 最适合带有大型渲染区域的应用程序（比如谷歌地图）; 复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）; 不适合游戏应用</li>
 </ol>
         
           <a class="article-more-a" href="/2017/09/22/我收集的一些基础面试题/#more">more >></a>
@@ -771,80 +843,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/20/简述CSS3的一些属性-4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-简述CSS3的一些属性(3)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/18/简述CSS3的一些属性(3)/">简述CSS3的一些属性(3)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/18/简述CSS3的一些属性(3)/" class="archive-article-date">
-  	<time datetime="2017-08-18T05:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>这篇文章主要讲css3字体、transform的2D转换<br>首先是字体@font-face, 2D转换的translate(), rotate(), scale(), skew(), transform-origin, 还有大魔王matrix().<br>2D转换的属性都没有继承性.</p>
-<h4 id="font-face"><a href="#font-face" class="headerlink" title="@font-face"></a>@font-face</h4><p>ie9及以上都支持, 但只支持.eot后缀字体. font-face的出现, 字体就没必要在用户用户端上提前安装好了.</p>
-<pre><code>@font-face {
-  font-family: fontName; // 一个变量名
-  src: url(&quot;fontTrueName.ttf&quot;), // 字体名
-  url(&quot;fontTrueName.eot&quot;);
-}
-div {
-  font-family: fontName; // 引用字体的变量名即可
-}</code></pre>
-        
-          <a class="article-more-a" href="/2017/08/18/简述CSS3的一些属性(3)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/18/简述CSS3的一些属性(3)/">展开全文 >></a>
         </p>
       
 

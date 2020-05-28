@@ -136,6 +136,155 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-写给自己的Markdown基本语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/28/写给自己的Markdown基本语法/">写给自己的Markdown基本语法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/28/写给自己的Markdown基本语法/" class="archive-article-date">
+  	<time datetime="2020-05-28T01:22:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>最近在用 Markdown 写文档，才发现自己没有系统地学习过 Markdown 语法，想用到某些语法还需要查阅，效率不高的同时还容易忘。故作此文，供自己巩固和学习</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Markdown 是一种轻量级标记语言。特点是易读易写、专注内容、能被使用来编写电子书，目前很多社区都支持该语言作为编辑工具，利于无缝分发。如：Github、reddit</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><h6 id="两种写法"><a href="#两种写法" class="headerlink" title="两种写法"></a>两种写法</h6><p>1、用 <code>#</code> 标记，#对应一级标题、######对应六级标题，一级标题字号最大，逐级递减</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># I am a title</span><br><span class="line"></span><br><span class="line">## I am a subtitle</span><br><span class="line"></span><br><span class="line">###### 两种写法</span><br></pre></td></tr></table></figure>
+
+<p>2、用 <code>=</code> 或 <code>-</code> 在下一行标记一级标题或二级标题，符号的数量需要控制在两个以上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">I am a title</span><br><span class="line">==</span><br><span class="line">I am a subtitle</span><br><span class="line">----</span><br></pre></td></tr></table></figure>
+
+<h4 id="段落换行"><a href="#段落换行" class="headerlink" title="段落换行"></a>段落换行</h4><p>两种<br>写法<br>1、在需要换行的位置使用两个以上的 <code>空格</code> 并且回车</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">两种  (此处有两个空格)</span><br><span class="line">写法</span><br></pre></td></tr></table></figure>
+
+<p>2、使用空行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">两种</span><br><span class="line"></span><br><span class="line">写法</span><br></pre></td></tr></table></figure>
+
+<h4 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h4><p><em>两种写法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line"></span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line"></span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除线-下划线-分割线"><a href="#删除线-下划线-分割线" class="headerlink" title="删除线 下划线 分割线"></a>删除线 下划线 分割线</h4><p>在<del>特定文本</del>两边分别填充两个 <code>~</code> 符号</p>
+<hr>
+<p>在<u>特定文本</u>两边分别填充 <code>&lt;u&gt;</code> 标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在~~特定文本~~两边分别填充两个~符号（不允许有空格</span><br><span class="line">- - - （或者 * * *、***）</span><br><span class="line">在&lt;u&gt;特定文本&lt;/u&gt;两边分别填充u标签</span><br></pre></td></tr></table></figure>
+
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>无序列表有三种写法（<code>*</code>、<code>+</code>、<code>-</code>）<br>有序列表使用数字并加上 <code>.</code>，值得注意的是，有序列表的升序并不会受数字影响</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+</ul>
+<ol>
+<li>第一项</li>
+<li>第二项（显示 2. 并不受 55.影响</li>
+</ol>
+<ul>
+<li>嵌套列表<ol>
+<li>第一项</li>
+<li>第二项</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line"></span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line"></span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line"></span><br><span class="line">1. 第一项</span><br><span class="line">55. 第二项 （显示2. 并不受55.影响</span><br><span class="line"></span><br><span class="line">- 嵌套列表</span><br><span class="line">  1. 第一项</span><br><span class="line">  2. 第二项</span><br></pre></td></tr></table></figure>
+
+<h4 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h4><blockquote>
+<p>开头使用<code>&gt;</code>符号</p>
+<ol>
+<li>第一项（区块中使用列表</li>
+<li>第二项</li>
+</ol>
+</blockquote>
+<ol>
+<li>列表中使用区块<blockquote>
+<p>区块</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 开头使用`&gt;`符号</span><br><span class="line">&gt; 1. 第一项</span><br><span class="line">&gt; 2. 第二项</span><br><span class="line"></span><br><span class="line">1. 列表中使用区块</span><br><span class="line">    &gt; 区块</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>一行以内的代码片段直接使用反引号 `` <code>，如</code>code frag`<br>多行的代码区块，两种写法</p>
+<pre><code>使用4个空格或者制表符（Tab）</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你也可以使用```包裹一段代码，并指定一种语言</span><br></pre></td></tr></table></figure>
+
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>三种<a href="https://https://psilocine.github.io/" target="_blank" rel="noopener">写法</a>，按格式 <code>[链接名称](链接地址)</code> 或者 <code>&lt;链接地址&gt;</code>，还可以定义变量来设置[链接][1]<br>[1]: <a href="https://https://psilocine.github.io/" target="_blank" rel="noopener">https://https://psilocine.github.io/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">三种[写法](https://https://psilocine.github.io/)</span><br><span class="line"></span><br><span class="line">[链接][1]</span><br><span class="line">[1]: https://https://psilocine.github.io/</span><br></pre></td></tr></table></figure>
+
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p>两种写法，按格式 <code>![alt 属性](图片地址)</code>，或者像链接地址一样通过定义变量图片链接<br>![图片失效的文本](error link)<br><img src="https://avatars1.githubusercontent.com/u/25545052?s=400&u=03b9cfdb679e21c495d04b94ad99445c7336f887&v=4" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![图片失效的文本](error link)</span><br><span class="line">![](https://avatars1.githubusercontent.com/u/25545052?s=400&amp;u=03b9cfdb679e21c495d04b94ad99445c7336f887&amp;v=4)</span><br></pre></td></tr></table></figure>
+
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p>制作表格使用 <code>|</code> 来分隔不同的单元格，使用 <code>-</code> 来分隔表头和其他行。在分割表头位置可以设置表格的对齐方式：</p>
+<ul>
+<li><code>-:</code> 设置内容和标题栏居右对齐（默认值</li>
+<li><code>:-</code> 设置内容和标题栏居左对齐</li>
+<li><code>:-:</code> 设置内容和标题栏居中对齐</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐  | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/28/写给自己的Markdown基本语法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-2020年书单推荐" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -729,75 +878,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/01/2018年书单推荐/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-关于Flex布局的使用指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/23/关于Flex布局的使用指南/">关于Flex布局的使用指南</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/23/关于Flex布局的使用指南/" class="archive-article-date">
-  	<time datetime="2018-02-23T15:56:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>flex布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧.</p>
-<h4 id="基本布局"><a href="#基本布局" class="headerlink" title="基本布局"></a>基本布局</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class='father'&gt; // flex container</span><br><span class="line">  &lt;div calss='son son-1'&gt;1&lt;/div&gt; // flex item</span><br><span class="line">  &lt;div calss='son son-2'&gt;2&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="flex-container属性"><a href="#flex-container属性" class="headerlink" title="flex container属性"></a>flex container属性</h4><p>flex规定flex container的横向为主轴(main axis), 纵向为交叉轴(cross axis)<br>1.flex-direction 指定flex item是如何布局的. 默认为row, 即flex item从左至右横向排列</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  flex-direction: row / row-reverse / column / column-reverse;</span><br><span class="line">                        (横向右至左) (纵向上至下) (纵向下至上)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/02/23/关于Flex布局的使用指南/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/23/关于Flex布局的使用指南/">展开全文 >></a>
         </p>
       
 
