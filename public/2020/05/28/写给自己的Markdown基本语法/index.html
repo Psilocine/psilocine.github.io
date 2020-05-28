@@ -17,7 +17,7 @@
 <meta property="og:description" content="写在前面最近在用 Markdown 写文档，才发现自己没有系统地学习过 Markdown 语法，想用到某些语法还需要查阅，效率不高的同时还容易忘。故作此文，供自己巩固和学习 简介Markdown 是一种轻量级标记语言。特点是易读易写、专注内容、能被使用来编写电子书，目前很多社区都支持该语言作为编辑工具，利于无缝分发。如：Github、reddit">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://avatars1.githubusercontent.com/u/25545052?s=400&u=03b9cfdb679e21c495d04b94ad99445c7336f887&v=4">
-<meta property="og:updated_time" content="2020-05-28T06:34:57.621Z">
+<meta property="og:updated_time" content="2020-05-28T07:07:40.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="写给自己的Markdown基本语法">
 <meta name="twitter:description" content="写在前面最近在用 Markdown 写文档，才发现自己没有系统地学习过 Markdown 语法，想用到某些语法还需要查阅，效率不高的同时还容易忘。故作此文，供自己巩固和学习 简介Markdown 是一种轻量级标记语言。特点是易读易写、专注内容、能被使用来编写电子书，目前很多社区都支持该语言作为编辑工具，利于无缝分发。如：Github、reddit">
@@ -165,7 +165,7 @@
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Markdown 是一种轻量级标记语言。特点是易读易写、专注内容、能被使用来编写电子书，目前很多社区都支持该语言作为编辑工具，利于无缝分发。如：Github、reddit</p>
 <a id="more"></a>
 
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><h6 id="两种写法"><a href="#两种写法" class="headerlink" title="两种写法"></a>两种写法</h6><p>1、用 <code>#</code> 标记，#对应一级标题、######对应六级标题，一级标题字号最大，逐级递减</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><h6 id="两种写法"><a href="#两种写法" class="headerlink" title="两种写法"></a>两种写法</h6><p>1、用 <code>#</code> 标记，<code>#</code> 对应一级标题、<code>######</code> 对应六级标题，一级标题字号最大，逐级递减</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># I am a title</span><br><span class="line"></span><br><span class="line">## I am a subtitle</span><br><span class="line"></span><br><span class="line">###### 两种写法</span><br></pre></td></tr></table></figure>
 
 <p>2、用 <code>=</code> 或 <code>-</code> 在下一行标记一级标题或二级标题，符号的数量需要控制在两个以上</p>
@@ -174,16 +174,17 @@
 <h4 id="段落换行"><a href="#段落换行" class="headerlink" title="段落换行"></a>段落换行</h4><p>两种<br>写法<br>1、在需要换行的位置使用两个以上的 <code>空格</code> 并且回车</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">两种  (此处有两个空格)</span><br><span class="line">写法</span><br></pre></td></tr></table></figure>
 
-<p>2、使用空行</p>
+<p>2、使用空一行，值得注意的是，空多行也会被解析成一行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">两种</span><br><span class="line"></span><br><span class="line">写法</span><br></pre></td></tr></table></figure>
 
 <h4 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h4><p><em>两种写法</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line"></span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line"></span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
 
-<h4 id="删除线-下划线-分割线"><a href="#删除线-下划线-分割线" class="headerlink" title="删除线 下划线 分割线"></a>删除线 下划线 分割线</h4><p>在<del>特定文本</del>两边分别填充两个 <code>~</code> 符号</p>
+<h4 id="删除线-分割线-下划线"><a href="#删除线-分割线-下划线" class="headerlink" title="删除线 分割线 下划线"></a>删除线 分割线 下划线</h4><p>在<del>特定文本</del>两边分别填充两个 <code>~</code> 符号</p>
 <hr>
 <p>在<u>特定文本</u>两边分别填充 <code>&lt;u&gt;</code> 标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在~~特定文本~~两边分别填充两个~符号（不允许有空格</span><br><span class="line">- - - （或者 * * *、***）</span><br><span class="line">在&lt;u&gt;特定文本&lt;/u&gt;两边分别填充u标签</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在~~特定文本~~两边分别填充两个~符号（不允许有空格</span><br><span class="line">- - - （或者 * * *、***）</span><br><span class="line">在&lt;u&gt;特定文本&lt;/u&gt;两边分别填充u标签</span><br><span class="line">***</span><br></pre></td></tr></table></figure>
 
 <h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>无序列表有三种写法（<code>*</code>、<code>+</code>、<code>-</code>）<br>有序列表使用数字并加上 <code>.</code>，值得注意的是，有序列表的升序并不会受数字影响</p>
 <ul>
@@ -215,14 +216,15 @@
 <p>区块</p>
 </blockquote>
 </li>
+<li>第二项</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 开头使用`&gt;`符号</span><br><span class="line">&gt; 1. 第一项</span><br><span class="line">&gt; 2. 第二项</span><br><span class="line"></span><br><span class="line">1. 列表中使用区块</span><br><span class="line">    &gt; 区块</span><br></pre></td></tr></table></figure>
 
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>一行以内的代码片段直接使用反引号 `` <code>，如</code>code frag`<br>多行的代码区块，两种写法</p>
-<pre><code>使用4个空格或者制表符（Tab）</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你也可以使用```包裹一段代码，并指定一种语言</span><br></pre></td></tr></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>一行以内的代码片段直接使用反引号 `，如<code>code frag</code><br>多行的代码区块，两种写法</p>
+<pre><code>使用4个空格或者制表符（Tab）</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你也可以使用```包裹一段代码，并指定一种语言，或不指定</span><br></pre></td></tr></table></figure>
 
-<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>三种<a href="https://https://psilocine.github.io/" target="_blank" rel="noopener">写法</a>，按格式 <code>[链接名称](链接地址)</code> 或者 <code>&lt;链接地址&gt;</code>，还可以定义变量来设置[链接][1]<br>[1]: <a href="https://https://psilocine.github.io/" target="_blank" rel="noopener">https://https://psilocine.github.io/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">三种[写法](https://https://psilocine.github.io/)</span><br><span class="line"></span><br><span class="line">[链接][1]</span><br><span class="line">[1]: https://https://psilocine.github.io/</span><br></pre></td></tr></table></figure>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>三种<a href="https://https://psilocine.github.io/" target="_blank" rel="noopener">写法</a>，按格式 <code>[链接名称](链接地址)</code> 或者 <code>&lt;链接地址&gt;</code>，还可以定义变量来设置[链接][link]<br>[link]: <a href="https://https://psilocine.github.io/" target="_blank" rel="noopener">https://https://psilocine.github.io/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">三种[写法](https://https://psilocine.github.io/)</span><br><span class="line"></span><br><span class="line">[链接][link]</span><br><span class="line">[link]: https://https://psilocine.github.io/</span><br></pre></td></tr></table></figure>
 
 <h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p>两种写法，按格式 <code>![alt 属性](图片地址)</code>，或者像链接地址一样通过定义变量图片链接<br>![图片失效的文本](error link)<br><img src="https://avatars1.githubusercontent.com/u/25545052?s=400&u=03b9cfdb679e21c495d04b94ad99445c7336f887&v=4" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![图片失效的文本](error link)</span><br><span class="line">![](https://avatars1.githubusercontent.com/u/25545052?s=400&amp;u=03b9cfdb679e21c495d04b94ad99445c7336f887&amp;v=4)</span><br></pre></td></tr></table></figure>
