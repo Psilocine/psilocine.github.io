@@ -6,15 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://psilocine.github.io">
-  <title>Archives: 2021 | Psilo&#39;s TecBlog</title>
+  <title>基于Inquirer实现命令行文件新增 | Psilo&#39;s TecBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Psilo&#39;s TecBlog">
-<meta property="og:url" content="https://psilocine.github.io/archives/2021/index.html">
+  <meta name="description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。 当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述Inquirer是做什么的？Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面">
+<meta name="keywords" content="前端,JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Inquirer实现命令行文件新增">
+<meta property="og:url" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/index.html">
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
+<meta property="og:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。 当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述Inquirer是做什么的？Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/Inquirer_icon.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/example.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_2.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_3.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/result.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/result_2.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_2.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_3.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_4.png">
+<meta property="og:updated_time" content="2021-07-02T06:17:16.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Psilo&#39;s TecBlog">
+<meta name="twitter:title" content="基于Inquirer实现命令行文件新增">
+<meta name="twitter:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。 当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述Inquirer是做什么的？Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面">
+<meta name="twitter:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/Inquirer_icon.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -134,36 +151,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-基于Inquirer实现命令行文件新增" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      基于Inquirer实现命令行文件新增
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/29/基于Inquirer实现命令行文件新增/" class="archive-article-date">
+
+        
+        <a href="/2021/04/29/基于Inquirer实现命令行文件新增/" class="archive-article-date">
   	<time datetime="2021-04-29T05:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-29</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/29/基于Inquirer实现命令行文件新增/">基于Inquirer实现命令行文件新增</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。</p>
+<p>当每次新业务需求来临的时候，需要：</p>
+<ol>
+<li>手动配置入口文件、新增项目文件夹和文件</li>
+<li>从老页面拷贝入口文件代码（统一的全局依赖、组件等）</li>
+</ol>
+<p>如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。</p>
+<h4 id="Inquirer概述"><a href="#Inquirer概述" class="headerlink" title="Inquirer概述"></a>Inquirer概述</h4><h5 id="Inquirer是做什么的？"><a href="#Inquirer是做什么的？" class="headerlink" title="Inquirer是做什么的？"></a>Inquirer是做什么的？</h5><p><img src="Inquirer_icon.png" alt="Inquirer"><br>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面，它是非常容易去处理以下几种事情的：</p>
+<ul>
+<li>提供错误回调</li>
+<li>询问操作者问题</li>
+<li>获取并解析用户输入</li>
+<li>检测用户回答是否合法</li>
+<li>管理多层级的提示</li>
+</ul>
+<p>Inquirer采用问答的命令行形式呈现，问题对象具体配置项：</p>
+<p><img src="example.png" alt="example"></p>
+<ul>
+<li>type：（String）提示的类型。默认值：input-可能的值：input，number，confirm， list，rawlist，expand，checkbox，password，editor</li>
+<li>name：（String）将答案存储在答案哈希中时使用的名称。如果名称包含句点，它将在答案哈希中定义路径。</li>
+<li>message：（String | Function）要打印的问题。如果定义为函数，则第一个参数将是当前查询者会话答案。默认值为name（后面跟冒号）。</li>
+<li>default：（String | Number | Boolean | Array | Function）如果未输入任何内容，则使用默认值，或者返回默认值的函数。如果定义为函数，则第一个参数将是当前查询者会话答案。</li>
+<li>validate：（功能）接收用户输入并回答哈希。true如果该值有效，则应返回，否则返回错误消息（String）。如果false返回，则提供默认错误消息。</li>
+<li>filter：（功能）接收用户输入并回答哈希。返回要在程序内部使用的过滤值。返回的值将添加到Answers哈希中。</li>
+<li>transformer：（功能）接收用户输入，回答哈希和选项标志，并返回转换后的值以显示给用户。转换仅影响编辑时显示的内容。它不会修改答案哈希。</li>
+<li>when：（Function，Boolean）接收当前用户的答案哈希，并应返回true或false取决于是否应询问此问题。该值也可以是一个简单的布尔值。</li>
+<li>choices：（Array | Function）Choices数组或返回choices数组的函数。如果定义为函数，则第一个参数将是当前查询者会话答案。数组值可以是简单的numbers，strings或objects含有一个name（将在一览显示），一个value（在答案散列保存），和一个short（以后选择显示）属性。choices数组也可以包含一个Separator。</li>
+</ul>
+<blockquote>
+<p>值得注意的是，每个type类型需要的配置项是不一样的，如type为checkbox时，需要配置choices；type为number时则不需要</p>
+</blockquote>
+<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><h5 id="流程如下"><a href="#流程如下" class="headerlink" title="流程如下"></a>流程如下</h5><ol>
+<li><p>npm run new</p>
+</li>
+<li><p>依次输入7个问题：</p>
+</li>
+</ol>
+<ul>
+<li>项目名</li>
+<li>是否P3项目</li>
+<li>页面入口</li>
+<li>页面标题</li>
+<li>是否需要数学公式</li>
+<li>是否需要页面loading</li>
+<li>是否需要页面通信lsbridge</li>
+</ul>
+<ol start="3">
+<li>创建成功/创建失败</li>
+</ol>
+<h5 id="会遇到的情况"><a href="#会遇到的情况" class="headerlink" title="会遇到的情况"></a>会遇到的情况</h5><ul>
+<li>创建失败：项目名重复</li>
+</ul>
+<p><img src="situation_1.png" alt="situation_1"></p>
+<ul>
+<li>创建失败：文件名重复</li>
+</ul>
+<p><img src="situation_2.png" alt="situation_2"></p>
+<ul>
+<li>创建成功</li>
+</ul>
+<p><img src="situation_3.png" alt="situation_3"></p>
+<p>创建成功后，在对应目录写入对应文件和在配置文件（打包的入口entry）配置项目信息<br><img src="result.png" alt="result"><br><img src="result_2.png" alt="result_2"></p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>首先依赖引入inquirer、chalk（命令行美化）、fs（文件读取写入）。</p>
+<p>逻辑我们分三部分：</p>
+<ol>
+<li>判断项目名是否同名</li>
+<li>判断项目是否为P3项目</li>
+<li>走完后续问题对象的输入</li>
+</ol>
+<p><img src="code_1.png" alt="code"></p>
+<p>isProjectExist方法是去遍历配置入口的所有项目名，一旦命中则退出脚本</p>
+<p><img src="code_2.png" alt="code_2"></p>
+<p>判断项目是否为P3项目</p>
+<p><img src="code_3.png" alt="code_3"></p>
+<p>setEntry目的是为了获取到正确的文件路径，如果项目都新增在同一个文件夹中，则不需要这一步</p>
+<p><img src="code_4.png" alt="code_4"></p>
+<p>走完后续问题对象的输入：<br>写入文件将默认的模版字符串写入，把需要替换的字符串如图中的<code>__placeholder__</code>替换成命令行输入的项目名即可。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -179,61 +271,100 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/25/indexedDB浅析/" class="archive-article-date">
-  	<time datetime="2021-03-25T03:21:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/25/indexedDB浅析/">IndexedDB浅析</a>
-    </h1>
+  
+    <a href="/2021/03/25/indexedDB浅析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IndexedDB浅析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/", 
+    sourceId: "基于Inquirer实现命令行文件新增",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -256,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

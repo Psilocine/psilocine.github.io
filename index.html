@@ -136,6 +136,145 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-基于Inquirer实现命令行文件新增" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/29/基于Inquirer实现命令行文件新增/">基于Inquirer实现命令行文件新增</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/29/基于Inquirer实现命令行文件新增/" class="archive-article-date">
+  	<time datetime="2021-04-29T05:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。</p>
+<p>当每次新业务需求来临的时候，需要：</p>
+<ol>
+<li>手动配置入口文件、新增项目文件夹和文件</li>
+<li>从老页面拷贝入口文件代码（统一的全局依赖、组件等）</li>
+</ol>
+<p>如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。</p>
+<h4 id="Inquirer概述"><a href="#Inquirer概述" class="headerlink" title="Inquirer概述"></a>Inquirer概述</h4><h5 id="Inquirer是做什么的？"><a href="#Inquirer是做什么的？" class="headerlink" title="Inquirer是做什么的？"></a>Inquirer是做什么的？</h5><p><img src="Inquirer_icon.png" alt="Inquirer"><br>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面，它是非常容易去处理以下几种事情的：</p>
+<ul>
+<li>提供错误回调</li>
+<li>询问操作者问题</li>
+<li>获取并解析用户输入</li>
+<li>检测用户回答是否合法</li>
+<li>管理多层级的提示</li>
+</ul>
+<p>Inquirer采用问答的命令行形式呈现，问题对象具体配置项：</p>
+<p><img src="example.png" alt="example"></p>
+<ul>
+<li>type：（String）提示的类型。默认值：input-可能的值：input，number，confirm， list，rawlist，expand，checkbox，password，editor</li>
+<li>name：（String）将答案存储在答案哈希中时使用的名称。如果名称包含句点，它将在答案哈希中定义路径。</li>
+<li>message：（String | Function）要打印的问题。如果定义为函数，则第一个参数将是当前查询者会话答案。默认值为name（后面跟冒号）。</li>
+<li>default：（String | Number | Boolean | Array | Function）如果未输入任何内容，则使用默认值，或者返回默认值的函数。如果定义为函数，则第一个参数将是当前查询者会话答案。</li>
+<li>validate：（功能）接收用户输入并回答哈希。true如果该值有效，则应返回，否则返回错误消息（String）。如果false返回，则提供默认错误消息。</li>
+<li>filter：（功能）接收用户输入并回答哈希。返回要在程序内部使用的过滤值。返回的值将添加到Answers哈希中。</li>
+<li>transformer：（功能）接收用户输入，回答哈希和选项标志，并返回转换后的值以显示给用户。转换仅影响编辑时显示的内容。它不会修改答案哈希。</li>
+<li>when：（Function，Boolean）接收当前用户的答案哈希，并应返回true或false取决于是否应询问此问题。该值也可以是一个简单的布尔值。</li>
+<li>choices：（Array | Function）Choices数组或返回choices数组的函数。如果定义为函数，则第一个参数将是当前查询者会话答案。数组值可以是简单的numbers，strings或objects含有一个name（将在一览显示），一个value（在答案散列保存），和一个short（以后选择显示）属性。choices数组也可以包含一个Separator。</li>
+</ul>
+<blockquote>
+<p>值得注意的是，每个type类型需要的配置项是不一样的，如type为checkbox时，需要配置choices；type为number时则不需要</p>
+</blockquote>
+<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><h5 id="流程如下"><a href="#流程如下" class="headerlink" title="流程如下"></a>流程如下</h5><ol>
+<li><p>npm run new</p>
+</li>
+<li><p>依次输入7个问题：</p>
+</li>
+</ol>
+<ul>
+<li>项目名</li>
+<li>是否P3项目</li>
+<li>页面入口</li>
+<li>页面标题</li>
+<li>是否需要数学公式</li>
+<li>是否需要页面loading</li>
+<li>是否需要页面通信lsbridge</li>
+</ul>
+<ol start="3">
+<li>创建成功/创建失败</li>
+</ol>
+<h5 id="会遇到的情况"><a href="#会遇到的情况" class="headerlink" title="会遇到的情况"></a>会遇到的情况</h5><ul>
+<li>创建失败：项目名重复</li>
+</ul>
+<p><img src="situation_1.png" alt="situation_1"></p>
+<ul>
+<li>创建失败：文件名重复</li>
+</ul>
+<p><img src="situation_2.png" alt="situation_2"></p>
+<ul>
+<li>创建成功</li>
+</ul>
+<p><img src="situation_3.png" alt="situation_3"></p>
+<p>创建成功后，在对应目录写入对应文件和在配置文件（打包的入口entry）配置项目信息<br><img src="result.png" alt="result"><br><img src="result_2.png" alt="result_2"></p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>首先依赖引入inquirer、chalk（命令行美化）、fs（文件读取写入）。</p>
+<p>逻辑我们分三部分：</p>
+<ol>
+<li>判断项目名是否同名</li>
+<li>判断项目是否为P3项目</li>
+<li>走完后续问题对象的输入</li>
+</ol>
+<p><img src="code_1.png" alt="code"></p>
+<p>isProjectExist方法是去遍历配置入口的所有项目名，一旦命中则退出脚本</p>
+<p><img src="code_2.png" alt="code_2"></p>
+<p>判断项目是否为P3项目</p>
+<p><img src="code_3.png" alt="code_3"></p>
+<p>setEntry目的是为了获取到正确的文件路径，如果项目都新增在同一个文件夹中，则不需要这一步</p>
+<p><img src="code_4.png" alt="code_4"></p>
+<p>走完后续问题对象的输入：<br>写入文件将默认的模版字符串写入，把需要替换的字符串如图中的<code>__placeholder__</code>替换成命令行输入的项目名即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/29/基于Inquirer实现命令行文件新增/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-indexedDB浅析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -759,75 +898,6 @@
 
 
   
-    <article id="post-浅析Vuex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/27/浅析Vuex/">浅析Vuex</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/27/浅析Vuex/" class="archive-article-date">
-  	<time datetime="2018-03-27T07:02:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>在中大型项目中, 如果不在组件外部管理状态, 可能会过于繁琐且难以维护. 本篇文章记录笔者的学习笔记, 基于官方文档.</p>
-<h4 id="最简单的Vuex"><a href="#最简单的Vuex" class="headerlink" title="最简单的Vuex"></a>最简单的Vuex</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment (state) &#123;</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="vuex运行机制"><a href="#vuex运行机制" class="headerlink" title="vuex运行机制"></a>vuex运行机制</h4><p>在 Vuex 中, 不能直接改变状态, 比如不能直接改变 store.state.count, 唯一的途径就是显示地提交 (commit) mutation</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">store.commit(&apos;increment&apos;)</span><br><span class="line"></span><br><span class="line">console.log(store.state.count) // -&gt; 1</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/03/27/浅析Vuex/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VUE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/27/浅析Vuex/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -924,15 +994,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HEXO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HEXO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -941,14 +1019,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
