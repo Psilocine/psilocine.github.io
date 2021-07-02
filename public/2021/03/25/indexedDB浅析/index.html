@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面目前支撑的业务有大量数据存储在WebStorage的情况，考虑到WebStorage容量的限制，研究了一下浏览器提供的本地数据库————IndexedDB IndexedDB概述IndexedDB是一种底层的异步API，是一种在用户浏览器中持久存储数据的方法。它允许您在不考虑网络的可用性，创建具有丰富查询能力的可离线Web应用程序。对于在客户端存储大量的结构化数据和不需要持久在线网络连接的">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/%E5%85%BC%E5%AE%B9%E6%80%A7.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/indexedDB%E5%AF%B9%E8%B1%A1.jpg">
-<meta property="og:updated_time" content="2021-07-02T03:50:18.384Z">
+<meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/compatibility.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/indexedDB_object.png">
+<meta property="og:updated_time" content="2021-07-02T05:54:22.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IndexedDB浅析">
 <meta name="twitter:description" content="写在前面目前支撑的业务有大量数据存储在WebStorage的情况，考虑到WebStorage容量的限制，研究了一下浏览器提供的本地数据库————IndexedDB IndexedDB概述IndexedDB是一种底层的异步API，是一种在用户浏览器中持久存储数据的方法。它允许您在不考虑网络的可用性，创建具有丰富查询能力的可离线Web应用程序。对于在客户端存储大量的结构化数据和不需要持久在线网络连接的">
-<meta name="twitter:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/%E5%85%BC%E5%AE%B9%E6%80%A7.jpg">
+<meta name="twitter:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/compatibility.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -174,7 +174,7 @@
 <li>LocalStorage约在5MB左右（各家浏览器不同，IE浏览器约3M左右），且不提供搜索功能，不能建立自定义索引。</li>
 </ol>
 <p>为了解决痛点，IndexedDB就应邀诞生了。</p>
-<h5 id="IndexedDB目前的兼容性（2021-03）"><a href="#IndexedDB目前的兼容性（2021-03）" class="headerlink" title="IndexedDB目前的兼容性（2021.03）"></a>IndexedDB目前的兼容性（2021.03）</h5><p><img src="%E5%85%BC%E5%AE%B9%E6%80%A7.jpg" alt="兼容性"></p>
+<h5 id="IndexedDB目前的兼容性（2021-03）"><a href="#IndexedDB目前的兼容性（2021-03）" class="headerlink" title="IndexedDB目前的兼容性（2021.03）"></a>IndexedDB目前的兼容性（2021.03）</h5><p><img src="compatibility.png" alt="兼容性"></p>
 <h5 id="IndexedDB的特性"><a href="#IndexedDB的特性" class="headerlink" title="IndexedDB的特性"></a>IndexedDB的特性</h5><ol>
 <li><p>键值对储存<br>IndexedDB内部采用对象仓库（object store）存放数据。所有类型的数据都可以直接存入，包括JavaScript对象。对象仓库中，数据以“键值对”的形式保存，每一个数据记录都有对应的主键，主键是独一无二的，不能有重复。</p>
 </li>
@@ -220,7 +220,7 @@
 <li><p>cmp(i, j)方法：比较两个主键的大小。返回整数（i === j为0、i &gt; j为1、i &lt; j为-1）</p>
 </li>
 </ul>
-<p><img src="indexedDB%E5%AF%B9%E8%B1%A1.jpg" alt="indexedDB对象"></p>
+<p><img src="indexedDB_object.png" alt="indexedDB对象"></p>
 <h5 id="IDBRequest对象："><a href="#IDBRequest对象：" class="headerlink" title="IDBRequest对象："></a>IDBRequest对象：</h5><p>操作请求，表示打开的数据库连接，数据库的操作都是通过这个对象执行的。indexedDB.open()和deleteDatabase()会返回这个对象。</p>
 <h5 id="IDBDatabase对象："><a href="#IDBDatabase对象：" class="headerlink" title="IDBDatabase对象："></a>IDBDatabase对象：</h5><p>通过IDBRequest对象的回调result属性获得。后面对数据库的操作，都通过这个对象完成。</p>
 <ul>
@@ -248,7 +248,10 @@
 <li><p>objectStore(name)方法：返回指定名称的对象仓库</p>
 </li>
 </ul>
-<h5 id="IDBIndex对象：索引，通过这个对象可以获取数据库里面的记录"><a href="#IDBIndex对象：索引，通过这个对象可以获取数据库里面的记录" class="headerlink" title="IDBIndex对象：索引，通过这个对象可以获取数据库里面的记录"></a>IDBIndex对象：索引，通过这个对象可以获取数据库里面的记录</h5><h5 id="IDBCursor对象：指针，用来遍历对象仓库或索引的记录。"><a href="#IDBCursor对象：指针，用来遍历对象仓库或索引的记录。" class="headerlink" title="IDBCursor对象：指针，用来遍历对象仓库或索引的记录。"></a>IDBCursor对象：指针，用来遍历对象仓库或索引的记录。</h5><h5 id="IDBKeyRange对象：主键集合，根据该集合的条件，可以获取数据仓库或索引里面的一组记录"><a href="#IDBKeyRange对象：主键集合，根据该集合的条件，可以获取数据仓库或索引里面的一组记录" class="headerlink" title="IDBKeyRange对象：主键集合，根据该集合的条件，可以获取数据仓库或索引里面的一组记录"></a>IDBKeyRange对象：主键集合，根据该集合的条件，可以获取数据仓库或索引里面的一组记录</h5><h4 id="IndexedDB的打开方式"><a href="#IndexedDB的打开方式" class="headerlink" title="IndexedDB的打开方式"></a>IndexedDB的打开方式</h4><p>比起干撸IndexedDB的API，社区已经有很多优秀而成熟的第三方库。上手简单，对开发者友好：</p>
+<h5 id="IDBIndex对象"><a href="#IDBIndex对象" class="headerlink" title="IDBIndex对象"></a>IDBIndex对象</h5><p>索引，通过这个对象可以获取数据库里面的记录</p>
+<h5 id="IDBCursor对象"><a href="#IDBCursor对象" class="headerlink" title="IDBCursor对象"></a>IDBCursor对象</h5><p>指针，用来遍历对象仓库或索引的记录</p>
+<h5 id="IDBKeyRange对象"><a href="#IDBKeyRange对象" class="headerlink" title="IDBKeyRange对象"></a>IDBKeyRange对象</h5><p>主键集合，根据该集合的条件，可以获取数据仓库或索引里面的一组记录</p>
+<h4 id="IndexedDB的打开方式"><a href="#IndexedDB的打开方式" class="headerlink" title="IndexedDB的打开方式"></a>IndexedDB的打开方式</h4><p>比起干撸IndexedDB的API，社区已经有很多优秀而成熟的第三方库。上手简单，对开发者友好：</p>
 <p><a href="https://localforage.github.io/localForage/" target="_blank" rel="noopener">localForage</a></p>
 <p><a href="http://www.dexie.org/" target="_blank" rel="noopener">dexie</a></p>
 <p><a href="https://pouchdb.com/" target="_blank" rel="noopener">PouchDB</a></p>
