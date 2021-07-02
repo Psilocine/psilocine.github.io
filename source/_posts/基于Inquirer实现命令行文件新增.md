@@ -29,7 +29,7 @@ Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面，它
 
 Inquirer采用问答的命令行形式呈现，问题对象具体配置项：
 
-![example](example.png)
+![example](example_1.png)
 
 * type：（String）提示的类型。默认值：input-可能的值：input，number，confirm， list，rawlist，expand，checkbox，password，editor
 * name：（String）将答案存储在答案哈希中时使用的名称。如果名称包含句点，它将在答案哈希中定义路径。
@@ -45,7 +45,6 @@ Inquirer采用问答的命令行形式呈现，问题对象具体配置项：
 
 #### 打开方式
 流程如下:
-
 1.npm run new
 2.依次输入7个问题：
 * 项目名
@@ -71,11 +70,11 @@ Inquirer采用问答的命令行形式呈现，问题对象具体配置项：
 
 创建成功后，在对应目录写入对应文件和在配置文件（打包的入口entry）配置项目信息
 ![result](result.png)
+
 ![result_2](result_2.png)
 
 #### 代码实现
 首先依赖引入inquirer、chalk（命令行美化）、fs（文件读取写入）。
-
 逻辑我们分三部分：
 1. 判断项目名是否同名
 2. 判断项目是否为P3项目
@@ -97,4 +96,3 @@ setEntry目的是为了获取到正确的文件路径，如果项目都新增在
 
 走完后续问题对象的输入：
 写入文件将默认的模版字符串写入，把需要替换的字符串如图中的`__placeholder__`替换成命令行输入的项目名即可。
-

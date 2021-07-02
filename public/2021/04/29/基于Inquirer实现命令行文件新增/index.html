@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://psilocine.github.io">
   <title>基于Inquirer实现命令行文件新增 | Psilo&#39;s TecBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。 当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述Inquirer是做什么的？Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面">
+  <meta name="description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述">
 <meta name="keywords" content="前端,JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Inquirer实现命令行文件新增">
 <meta property="og:url" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/index.html">
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
-<meta property="og:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。 当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述Inquirer是做什么的？Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面">
+<meta property="og:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/Inquirer_icon.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/example.png">
@@ -27,10 +27,10 @@
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_2.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_3.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_4.png">
-<meta property="og:updated_time" content="2021-07-02T06:17:16.335Z">
+<meta property="og:updated_time" content="2021-07-02T06:21:46.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Inquirer实现命令行文件新增">
-<meta name="twitter:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。 当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述Inquirer是做什么的？Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面">
+<meta name="twitter:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述">
 <meta name="twitter:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/Inquirer_icon.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
@@ -171,14 +171,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。</p>
-<p>当每次新业务需求来临的时候，需要：</p>
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。<br>当每次新业务需求来临的时候，需要：</p>
 <ol>
 <li>手动配置入口文件、新增项目文件夹和文件</li>
 <li>从老页面拷贝入口文件代码（统一的全局依赖、组件等）</li>
 </ol>
 <p>如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。</p>
-<h4 id="Inquirer概述"><a href="#Inquirer概述" class="headerlink" title="Inquirer概述"></a>Inquirer概述</h4><h5 id="Inquirer是做什么的？"><a href="#Inquirer是做什么的？" class="headerlink" title="Inquirer是做什么的？"></a>Inquirer是做什么的？</h5><p><img src="Inquirer_icon.png" alt="Inquirer"><br>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面，它是非常容易去处理以下几种事情的：</p>
+<h4 id="Inquirer概述"><a href="#Inquirer概述" class="headerlink" title="Inquirer概述"></a>Inquirer概述</h4><a id="more"></a>
+
+<h5 id="Inquirer是做什么的？"><a href="#Inquirer是做什么的？" class="headerlink" title="Inquirer是做什么的？"></a>Inquirer是做什么的？</h5><p><img src="Inquirer_icon.png" alt="Inquirer"><br>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面，它是非常容易去处理以下几种事情的：</p>
 <ul>
 <li>提供错误回调</li>
 <li>询问操作者问题</li>
@@ -202,12 +203,8 @@
 <blockquote>
 <p>值得注意的是，每个type类型需要的配置项是不一样的，如type为checkbox时，需要配置choices；type为number时则不需要</p>
 </blockquote>
-<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><h5 id="流程如下"><a href="#流程如下" class="headerlink" title="流程如下"></a>流程如下</h5><ol>
-<li><p>npm run new</p>
-</li>
-<li><p>依次输入7个问题：</p>
-</li>
-</ol>
+<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><p>流程如下:</p>
+<p>1.npm run new<br>2.依次输入7个问题：</p>
 <ul>
 <li>项目名</li>
 <li>是否P3项目</li>
@@ -217,9 +214,7 @@
 <li>是否需要页面loading</li>
 <li>是否需要页面通信lsbridge</li>
 </ul>
-<ol start="3">
-<li>创建成功/创建失败</li>
-</ol>
+<p>3.创建成功/创建失败</p>
 <h5 id="会遇到的情况"><a href="#会遇到的情况" class="headerlink" title="会遇到的情况"></a>会遇到的情况</h5><ul>
 <li>创建失败：项目名重复</li>
 </ul>
