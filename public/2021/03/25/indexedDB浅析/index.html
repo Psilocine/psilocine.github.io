@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/compatibility.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/indexedDB_object.png">
-<meta property="og:updated_time" content="2021-07-02T05:54:22.745Z">
+<meta property="og:updated_time" content="2021-07-02T05:57:23.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IndexedDB浅析">
 <meta name="twitter:description" content="写在前面目前支撑的业务有大量数据存储在WebStorage的情况，考虑到WebStorage容量的限制，研究了一下浏览器提供的本地数据库————IndexedDB IndexedDB概述IndexedDB是一种底层的异步API，是一种在用户浏览器中持久存储数据的方法。它允许您在不考虑网络的可用性，创建具有丰富查询能力的可离线Web应用程序。对于在客户端存储大量的结构化数据和不需要持久在线网络连接的">
@@ -176,19 +176,29 @@
 <p>为了解决痛点，IndexedDB就应邀诞生了。</p>
 <h5 id="IndexedDB目前的兼容性（2021-03）"><a href="#IndexedDB目前的兼容性（2021-03）" class="headerlink" title="IndexedDB目前的兼容性（2021.03）"></a>IndexedDB目前的兼容性（2021.03）</h5><p><img src="compatibility.png" alt="兼容性"></p>
 <h5 id="IndexedDB的特性"><a href="#IndexedDB的特性" class="headerlink" title="IndexedDB的特性"></a>IndexedDB的特性</h5><ol>
-<li><p>键值对储存<br>IndexedDB内部采用对象仓库（object store）存放数据。所有类型的数据都可以直接存入，包括JavaScript对象。对象仓库中，数据以“键值对”的形式保存，每一个数据记录都有对应的主键，主键是独一无二的，不能有重复。</p>
-</li>
-<li><p>异步<br>IndexedDB操作时不会锁死浏览器，用户依然可以进行其他操作，这与LocalStorage形成对比，后者的操作是同步的。异步设计是为了防止大量数据的读写，拖慢网页的表现。值得注意的是，IndexedDB也有同步API，目前已从规范中移除。</p>
-</li>
-<li><p>支持事务<br>IndexedDB支持事务（transaction），这意味着一系列操作步骤之中，只要有一步失败，整个事务就都取消，数据库回滚到事务发生之前的状态，不存在只改写一部分数据的情况。</p>
-</li>
-<li><p>同源策略<br>IndexedDB受到同源限制，每一个数据库对应创建它的域名。网页只能访问自身域名下的数据库，而不能访问跨域的数据库。</p>
-</li>
-<li><p>储存空间大<br>IndexedDB的储存空间比LocalStorage大得多，理论上取决于硬盘大小：为可用磁盘空间的50%。</p>
-</li>
-<li><p>支持二进制储存<br>IndexedDB不仅可以储存字符串，还可以储存二进制数据（ArrayBuffer对象和Blob对象，理论上支持任意格式的数据）。</p>
-</li>
+<li>键值对储存</li>
 </ol>
+<p>IndexedDB内部采用对象仓库（object store）存放数据。所有类型的数据都可以直接存入，包括JavaScript对象。对象仓库中，数据以“键值对”的形式保存，每一个数据记录都有对应的主键，主键是独一无二的，不能有重复。</p>
+<ol start="2">
+<li>异步</li>
+</ol>
+<p>IndexedDB操作时不会锁死浏览器，用户依然可以进行其他操作，这与LocalStorage形成对比，后者的操作是同步的。异步设计是为了防止大量数据的读写，拖慢网页的表现。值得注意的是，IndexedDB也有同步API，目前已从规范中移除。</p>
+<ol start="3">
+<li>支持事务</li>
+</ol>
+<p>IndexedDB支持事务（transaction），这意味着一系列操作步骤之中，只要有一步失败，整个事务就都取消，数据库回滚到事务发生之前的状态，不存在只改写一部分数据的情况。</p>
+<ol start="4">
+<li>同源策略</li>
+</ol>
+<p>IndexedDB受到同源限制，每一个数据库对应创建它的域名。网页只能访问自身域名下的数据库，而不能访问跨域的数据库。</p>
+<ol start="5">
+<li>储存空间大</li>
+</ol>
+<p>IndexedDB的储存空间比LocalStorage大得多，理论上取决于硬盘大小：为可用磁盘空间的50%。</p>
+<ol start="6">
+<li>支持二进制储存</li>
+</ol>
+<p>IndexedDB不仅可以储存字符串，还可以储存二进制数据（ArrayBuffer对象和Blob对象，理论上支持任意格式的数据）。</p>
 <h5 id="IndexedDB的局限性"><a href="#IndexedDB的局限性" class="headerlink" title="IndexedDB的局限性"></a>IndexedDB的局限性</h5><p>以下情况不适合使用IndexedDB：</p>
 <ul>
 <li>多语言混合存储。国际化支持不好，需要自己处理。</li>
@@ -353,6 +363,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2021/04/29/基于Inquirer实现命令行文件新增/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基于Inquirer实现命令行文件新增
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/08/24/我花三个月汉化了一个文档/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">我花三个月汉化了一个文档</div>
@@ -474,15 +493,23 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HEXO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HEXO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,14 +518,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
