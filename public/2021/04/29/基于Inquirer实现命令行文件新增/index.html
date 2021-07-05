@@ -17,7 +17,7 @@
 <meta property="og:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/Inquirer_icon.png">
-<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/example.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/example_1.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_1.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_2.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_3.png">
@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_2.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_3.png">
 <meta property="og:image" content="https://psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_4.png">
-<meta property="og:updated_time" content="2021-07-02T06:21:46.809Z">
+<meta property="og:updated_time" content="2021-07-02T06:23:21.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Inquirer实现命令行文件新增">
 <meta name="twitter:description" content="写在前面由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。当每次新业务需求来临的时候，需要：  手动配置入口文件、新增项目文件夹和文件 从老页面拷贝入口文件代码（统一的全局依赖、组件等）  如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。 Inquirer概述">
@@ -188,7 +188,7 @@
 <li>管理多层级的提示</li>
 </ul>
 <p>Inquirer采用问答的命令行形式呈现，问题对象具体配置项：</p>
-<p><img src="example.png" alt="example"></p>
+<p><img src="example_1.png" alt="example"></p>
 <ul>
 <li>type：（String）提示的类型。默认值：input-可能的值：input，number，confirm， list，rawlist，expand，checkbox，password，editor</li>
 <li>name：（String）将答案存储在答案哈希中时使用的名称。如果名称包含句点，它将在答案哈希中定义路径。</li>
@@ -203,8 +203,7 @@
 <blockquote>
 <p>值得注意的是，每个type类型需要的配置项是不一样的，如type为checkbox时，需要配置choices；type为number时则不需要</p>
 </blockquote>
-<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><p>流程如下:</p>
-<p>1.npm run new<br>2.依次输入7个问题：</p>
+<h4 id="打开方式"><a href="#打开方式" class="headerlink" title="打开方式"></a>打开方式</h4><p>流程如下:<br>1.npm run new<br>2.依次输入7个问题：</p>
 <ul>
 <li>项目名</li>
 <li>是否P3项目</li>
@@ -227,9 +226,9 @@
 <li>创建成功</li>
 </ul>
 <p><img src="situation_3.png" alt="situation_3"></p>
-<p>创建成功后，在对应目录写入对应文件和在配置文件（打包的入口entry）配置项目信息<br><img src="result.png" alt="result"><br><img src="result_2.png" alt="result_2"></p>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>首先依赖引入inquirer、chalk（命令行美化）、fs（文件读取写入）。</p>
-<p>逻辑我们分三部分：</p>
+<p>创建成功后，在对应目录写入对应文件和在配置文件（打包的入口entry）配置项目信息<br><img src="result.png" alt="result"></p>
+<p><img src="result_2.png" alt="result_2"></p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>首先依赖引入inquirer、chalk（命令行美化）、fs（文件读取写入）。<br>逻辑我们分三部分：</p>
 <ol>
 <li>判断项目名是否同名</li>
 <li>判断项目是否为P3项目</li>
