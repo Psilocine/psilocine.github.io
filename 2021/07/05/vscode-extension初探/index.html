@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://psilocine.github.io/2021/07/05/vscode-extension初探/paperang-pomodoro.gif">
 <meta property="og:image" content="https://psilocine.github.io/2021/07/05/vscode-extension初探/paperang-theme.gif">
 <meta property="og:image" content="https://psilocine.github.io/2021/07/05/vscode-extension初探/local_setup.gif">
-<meta property="og:updated_time" content="2021-07-06T02:07:05.092Z">
+<meta property="og:updated_time" content="2021-07-06T02:36:52.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vscode extension初探">
 <meta name="twitter:description" content="写在前面越学习vscode的知识，越觉得vscode这个编辑器的强大，也会感觉越学越多。本文简单地探讨一下vscode的构成和vscode extension的用法。 vscode 构成vscode的特性之一是跨平台。是因为它是基于Electron构建的，主要有三部分组成：  Monaco Editor：基于web的代码编辑器 Extension Host：插件管理 Language Server">
@@ -183,8 +183,11 @@
 <li><a href="https://microsoft.github.io/language-server-protocol/" target="_blank" rel="noopener">Language Server Protocol</a> &amp; <a href="https://microsoft.github.io/debug-adapter-protocol/" target="_blank" rel="noopener">Debug Adapter Protocol</a>：两大协议</li>
 </ul>
 <p>还有一个特性是轻量级，因为很多功能都是基于插件实现，插件进程并不影响主进程的渲染速度、UI响应。</p>
+<a id="more"></a>
+
 <p><img src="vscode.png" alt="vscode"></p>
 <p><img src="lsp.png" alt="LSP"></p>
+<p>没有LSP以前，各种语言都要去找各自的IDE：如JAVA要用IntelliJ、Eclipse；Python要用PyCharm；<br>有了LSP，开发者只需要编写一次，就可以很快地在IDE之间移植代码</p>
 <p><img src="dap.png" alt="DAP"></p>
 <h4 id="vscode-extension-要点"><a href="#vscode-extension-要点" class="headerlink" title="vscode extension 要点"></a>vscode extension 要点</h4><p>vscode插件<a href="https://code.visualstudio.com/api/extension-capabilities/overview" target="_blank" rel="noopener">能做什么？（官方）</a></p>
 <ul>
@@ -256,11 +259,15 @@
 </ul>
 <p>eg: onWebviewPanel:catCoding</p>
 <ul>
-<li>onCustomEditor 匹配到是viewType的自定义编辑器时激活 </li>
-<li>*（start up）vscode启动时激活（尽量不用</li>
-<li>onStartupFinished vscode启动一段时间后激活（和*相比，不会减慢vscode的启动速度</li>
+<li><p>onCustomEditor 匹配到是viewType的自定义编辑器时激活</p>
+</li>
+<li><p>*（start up）vscode启动时激活（尽量不用</p>
+</li>
+<li><p>onStartupFinished vscode启动一段时间后激活（和*相比，不会减慢vscode的启动速度</p>
+</li>
 </ul>
 <p><img src="activation_event_3.png" alt="activation_event_3"></p>
+<p>更多详见<a href="https://code.visualstudio.com/api/references/activation-events" target="_blank" rel="noopener">官方文档</a></p>
 <h5 id="Contribution-Points"><a href="#Contribution-Points" class="headerlink" title="Contribution Points"></a>Contribution Points</h5><ul>
 <li>configuration:object 将插件的配置内容暴露出来，用户可以通过UI界面或setting.json修改<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title:string 插件的展示名称 eg:paperangExtension -&gt; Paperang Extension</span><br><span class="line">properties:object 配置项集合</span><br><span class="line">  [property]:object 配置项</span><br><span class="line">    type number、string、boolean可以在UI界面展示，其余types只能通过json修改</span><br><span class="line">    <span class="keyword">default</span>:any</span><br><span class="line">    description:string</span><br><span class="line">    markdownDescription:string</span><br><span class="line">    enum:array</span><br><span class="line">    enumDescriptions:array</span><br></pre></td></tr></table></figure>
 
@@ -285,6 +292,7 @@
 </object></li>
 </ul>
 <p><img src="contribution_points_4.png" alt="contribution_points_example"></p>
+<p>更多详见<a href="https://code.visualstudio.com/api/references/contribution-points" target="_blank" rel="noopener">官方文档</a></p>
 <h5 id="VS-Code-API"><a href="#VS-Code-API" class="headerlink" title="VS Code API"></a>VS Code API</h5><p>VS Code暴露了大几十种<a href="https://code.visualstudio.com/api/references/vscode-api" target="_blank" rel="noopener">API</a>，下述只罗列几个：</p>
 <ul>
 <li>commands:</li>
@@ -297,13 +305,15 @@
 <ul>
 <li>workspace：</li>
 </ul>
-<p>getConfiguration 获取配置对象<br>eg: vscode.workspace.getConfiguration(‘pomodoro).get(visible’)、<br>vscode.workspace.getConfiguration().get(‘pomodoro.visible’)</p>
+<p>getConfiguration 获取配置对象<br>eg: vscode.workspace.getConfiguration(‘pomodoro’).get(‘visible’)、<br>vscode.workspace.getConfiguration().get(‘pomodoro.visible’)</p>
+<p>更多详见<a href="https://code.visualstudio.com/api/references/vscode-api" target="_blank" rel="noopener">官方文档</a></p>
 <h4 id="实践和发布"><a href="#实践和发布" class="headerlink" title="实践和发布"></a>实践和发布</h4><ol>
 <li>安装官方脚手架yo、generator-code<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g yo generator-code</span><br><span class="line">$ yo code</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<p><img src="cli.png" alt="cli"><br><img src="cli-builded.png" alt="cli-builded"></p>
+<p><img src="cli.png" alt="cli"></p>
+<p><img src="cli-builded.png" alt="cli-builded"></p>
 <ol start="2">
 <li>完成插件的开发和测试</li>
 </ol>
