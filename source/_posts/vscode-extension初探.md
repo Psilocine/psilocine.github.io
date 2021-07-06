@@ -22,6 +22,9 @@ vscode的特性之一是跨平台。是因为它是基于Electron构建的，主
 
 ![LSP](lsp.png)
 
+没有LSP以前，各种语言都要去找各自的IDE：如JAVA要用IntelliJ、Eclipse；Python要用PyCharm；
+有了LSP，开发者只需要编写一次，就可以很快地在IDE之间移植代码
+
 ![DAP](dap.png)
 
 #### vscode extension 要点
@@ -89,11 +92,15 @@ eg:vscode://vscode.git/init、vscode-insiders://vscode.git/init
 * onWebviewPanel 匹配到是viewType的webview时激活（需要配合其他事件、如onCommand来创建webview 
 
 eg: onWebviewPanel:catCoding
-* onCustomEditor 匹配到是viewType的自定义编辑器时激活 
+* onCustomEditor 匹配到是viewType的自定义编辑器时激活
+
 * *（start up）vscode启动时激活（尽量不用
+
 * onStartupFinished vscode启动一段时间后激活（和*相比，不会减慢vscode的启动速度
 
 ![activation_event_3](activation_event_3.png)
+
+更多详见[官方文档](https://code.visualstudio.com/api/references/activation-events)
 
 ##### Contribution Points
 * configuration:object 将插件的配置内容暴露出来，用户可以通过UI界面或setting.json修改
@@ -145,6 +152,8 @@ when:string
 
 ![contribution_points_example](contribution_points_4.png)
 
+更多详见[官方文档](https://code.visualstudio.com/api/references/contribution-points)
+
 ##### VS Code API
 VS Code暴露了大几十种[API](https://code.visualstudio.com/api/references/vscode-api)，下述只罗列几个：
 * commands:
@@ -163,8 +172,10 @@ show(Error/Infomation/Warning)Message(message: string, ...items: string[]) 底�
 * workspace：
 
 getConfiguration 获取配置对象
-eg: vscode.workspace.getConfiguration('pomodoro).get(visible')、
+eg: vscode.workspace.getConfiguration('pomodoro').get('visible')、
 vscode.workspace.getConfiguration().get('pomodoro.visible')
+
+更多详见[官方文档](https://code.visualstudio.com/api/references/vscode-api)
 
 #### 实践和发布
 1. 安装官方脚手架yo、generator-code
@@ -173,6 +184,7 @@ $ npm install -g yo generator-code
 $ yo code
 ```
 ![cli](cli.png)
+
 ![cli-builded](cli-builded.png)
 
 2. 完成插件的开发和测试
