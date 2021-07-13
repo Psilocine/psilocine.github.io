@@ -136,6 +136,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-console命令大全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/10/console命令大全/">console命令大全</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/10/console命令大全/" class="archive-article-date">
+  	<time datetime="2018-05-10T06:45:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>console.log, console.time相信大家都不陌生, 平时除了打断点就是打log来调试, 可谓是居家旅行必备神器. 今天就来扒扒除了以上常见的还有哪些可能其貌不扬的命令.</p>
+<h4 id="log"><a href="#log" class="headerlink" title="log"></a>log</h4><ol>
+<li>log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.
+        
+          <a class="article-more-a" href="/2018/05/10/console命令大全/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/10/console命令大全/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-浅析axios" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -748,74 +811,6 @@
 
 
   
-    <article id="post-浅析Js的for循环方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/15/浅析Js的for循环方法/">浅析Js的for循环方法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/15/浅析Js的for循环方法/" class="archive-article-date">
-  	<time datetime="2017-10-15T09:09:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>Js 的 for 方法有几种了, 你有没有仔细思考过? 性能如何?<br>除了原生的前测试循环 for(;;), 还有 es5(for-in),(forEach) 以及 es6 新方法(for-of)</p>
-<h4 id="普通-for-循环-for"><a href="#普通-for-循环-for" class="headerlink" title="普通 for 循环: for(;;)"></a>普通 for 循环: for(;;)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 当length是个不变的定值时, 可以赋予变量来提高性能</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其实 JavaScript 的 Array 的索引是 String 类型, 即 arr[i]的 i 并不是 number, 而是 string. arr[1]是系统把 1 转成 String 的’1’才能使用 arr[1].</p>
-        
-          <a class="article-more-a" href="/2017/10/15/浅析Js的for循环方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/15/浅析Js的for循环方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -837,6 +832,13 @@
       	</div>
     </div>
   </div>
+
+  <style>
+    a[title=站长统计] {
+      display: none;
+    }
+  </style>
+  <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1280107337&web_id=1280107337"></script>
 </footer>
     </div>
     <script>
@@ -920,19 +922,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
