@@ -179,7 +179,7 @@
 <p>如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。</p>
 <h4 id="Inquirer概述"><a href="#Inquirer概述" class="headerlink" title="Inquirer概述"></a>Inquirer概述</h4><a id="more"></a>
 
-<h5 id="Inquirer是做什么的？"><a href="#Inquirer是做什么的？" class="headerlink" title="Inquirer是做什么的？"></a>Inquirer是做什么的？</h5><p><img src="Inquirer_icon.png" alt="Inquirer"><br>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面，它是非常容易去处理以下几种事情的：</p>
+<h5 id="Inquirer是做什么的？"><a href="#Inquirer是做什么的？" class="headerlink" title="Inquirer是做什么的？"></a>Inquirer是做什么的？</h5><p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/Inquirer_icon.png" alt="Inquirer"><br>Inquirer.js试图为NodeJs做一个可嵌入式的美观的命令行界面，它是非常容易去处理以下几种事情的：</p>
 <ul>
 <li>提供错误回调</li>
 <li>询问操作者问题</li>
@@ -188,7 +188,7 @@
 <li>管理多层级的提示</li>
 </ul>
 <p>Inquirer采用问答的命令行形式呈现，问题对象具体配置项：</p>
-<p><img src="example_1.png" alt="example"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/example_1.png" alt="example"></p>
 <ul>
 <li>type：（String）提示的类型。默认值：input-可能的值：input，number，confirm， list，rawlist，expand，checkbox，password，editor</li>
 <li>name：（String）将答案存储在答案哈希中时使用的名称。如果名称包含句点，它将在答案哈希中定义路径。</li>
@@ -217,30 +217,30 @@
 <h5 id="会遇到的情况"><a href="#会遇到的情况" class="headerlink" title="会遇到的情况"></a>会遇到的情况</h5><ul>
 <li>创建失败：项目名重复</li>
 </ul>
-<p><img src="situation_1.png" alt="situation_1"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_1.png" alt="situation_1"></p>
 <ul>
 <li>创建失败：文件名重复</li>
 </ul>
-<p><img src="situation_2.png" alt="situation_2"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_2.png" alt="situation_2"></p>
 <ul>
 <li>创建成功</li>
 </ul>
-<p><img src="situation_3.png" alt="situation_3"></p>
-<p>创建成功后，在对应目录写入对应文件和在配置文件（打包的入口entry）配置项目信息<br><img src="result.png" alt="result"></p>
-<p><img src="result_2.png" alt="result_2"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/situation_3.png" alt="situation_3"></p>
+<p>创建成功后，在对应目录写入对应文件和在配置文件（打包的入口entry）配置项目信息<br><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/result.png" alt="result"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/result_2.png" alt="result_2"></p>
 <h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>首先依赖引入inquirer、chalk（命令行美化）、fs（文件读取写入）。<br>逻辑我们分三部分：</p>
 <ol>
 <li>判断项目名是否同名</li>
 <li>判断项目是否为P3项目</li>
 <li>走完后续问题对象的输入</li>
 </ol>
-<p><img src="code_1.png" alt="code"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_1.png" alt="code"></p>
 <p>isProjectExist方法是去遍历配置入口的所有项目名，一旦命中则退出脚本</p>
-<p><img src="code_2.png" alt="code_2"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_2.png" alt="code_2"></p>
 <p>判断项目是否为P3项目</p>
-<p><img src="code_3.png" alt="code_3"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_3.png" alt="code_3"></p>
 <p>setEntry目的是为了获取到正确的文件路径，如果项目都新增在同一个文件夹中，则不需要这一步</p>
-<p><img src="code_4.png" alt="code_4"></p>
+<p><img src="//psilocine.github.io/2021/04/29/基于Inquirer实现命令行文件新增/code_4.png" alt="code_4"></p>
 <p>走完后续问题对象的输入：<br>写入文件将默认的模版字符串写入，把需要替换的字符串如图中的<code>__placeholder__</code>替换成命令行输入的项目名即可。</p>
 
       

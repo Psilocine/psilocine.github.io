@@ -173,7 +173,7 @@
 <ul>
 <li><font size="4">网格容器(Grid Container)</font><br>应用 display: grid布局 的元素就是网格容器, 上述div.container为网格容器</li>
 </ul>
-<p><img src="origin.jpg" alt="A Grid Item"></p>
+<p><img src="//psilocine.github.io/2017/12/16/关于Grid布局的使用指南/origin.jpg" alt="A Grid Item"></p>
 <ul>
 <li><p><font size="4">网格项(Grid Item)</font><br>网格容器的第一级子元素, 上述的div.item都是, span.sub-item则不是, 其实很好理解, 如果Grid布局影响所有子元素, 那布局就乱了套.</p>
 </li>
@@ -182,7 +182,7 @@
 <li><p><font size="4">网格单元格(Grid Cell)</font><br>相邻横网格线和相邻列网格线围成的区域就是网格单元格, 上诉指出的div.item-6就是网格单元格.</p>
 </li>
 </ul>
-<p><img src="grid-area.jpg" alt="A Grid Area"></p>
+<p><img src="//psilocine.github.io/2017/12/16/关于Grid布局的使用指南/grid-area.jpg" alt="A Grid Area"></p>
 <ul>
 <li><font size="4">网格区域(Grid Area)</font><br>那不相邻的网格横纵线组成的区域, 就是网格区域, 如图4 5 6彩色区域, 即为行网格线2到3, 列网格线1到4所划区域.</li>
 </ul>
@@ -191,19 +191,19 @@
 
 </li>
 </ul>
-<p><img src="grid-template_auto.jpg" alt="Grid Template: auto"><br>同时支持缩写, grid-template: <rows> / <columns> 上面两行代码可写成 grid-template: 25% auto 100px / 40px auto 50px</columns></rows></p>
+<p><img src="//psilocine.github.io/2017/12/16/关于Grid布局的使用指南/grid-template_auto.jpg" alt="Grid Template: auto"><br>同时支持缩写, grid-template: <rows> / <columns> 上面两行代码可写成 grid-template: 25% auto 100px / 40px auto 50px</columns></rows></p>
 <ul>
 <li><font size="4">grid-template-areas</font><br>网格项通过 grid-area 属性来定义名字模板, 这时候就能在grid-template-areas里来引用名字模板.<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/* 在第一个例子基础上 */</span><br><span class="line">.container &#123;</span><br><span class="line">  grid-template-areas: </span><br><span class="line">    "header header header"</span><br><span class="line">    ". main ."</span><br><span class="line">    "footer footer footer";</span><br><span class="line">&#125;</span><br><span class="line">.item-1 &#123;</span><br><span class="line">  grid-area: header;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br><span class="line">.item-2 &#123;</span><br><span class="line">  grid-area: footer;</span><br><span class="line">  background: green;</span><br><span class="line">&#125;</span><br><span class="line">.item-3 &#123;</span><br><span class="line">  grid-area: main;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<p><img src="grid-template-areas.jpg" alt="Grid Template Areas"><br>可以看出, “.”代表空的网格单元格, 三个grid-area布完局后, 多余的网络项也按顺序布局, 所以才有div.item-4, div.item-5填充在”.”里, 同时也能看出多余的网络项高度只能由内容撑起. grid-template-areas属性的出现, 结合grid-template-rows/columns能很方便实现aside/main等复杂布局.</p>
+<p><img src="//psilocine.github.io/2017/12/16/关于Grid布局的使用指南/grid-template-areas.jpg" alt="Grid Template Areas"><br>可以看出, “.”代表空的网格单元格, 三个grid-area布完局后, 多余的网络项也按顺序布局, 所以才有div.item-4, div.item-5填充在”.”里, 同时也能看出多余的网络项高度只能由内容撑起. grid-template-areas属性的出现, 结合grid-template-rows/columns能很方便实现aside/main等复杂布局.</p>
 <ul>
 <li><font size="4">grid-gap</font><br>用来制定Grid Cell单元格的间距, grid-gap: (grid-row-gap:行与行之间间隙) (grid-column-gap:列与列间隙), 以上是缩写形式, 也可以单独定义.<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* 在第一个例子基础上 */</span><br><span class="line">.container &#123;</span><br><span class="line">  grid-row-gap: 20px;</span><br><span class="line">  grid-column-gap: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<p><img src="grid-gap.jpg" alt="Grid Gap"><br>如上图可见Grid Cell被隔开了指定距离.</p>
+<p><img src="//psilocine.github.io/2017/12/16/关于Grid布局的使用指南/grid-gap.jpg" alt="Grid Gap"><br>如上图可见Grid Cell被隔开了指定距离.</p>
 
       
 

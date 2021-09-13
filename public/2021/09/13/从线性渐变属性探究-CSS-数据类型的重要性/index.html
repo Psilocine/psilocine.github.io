@@ -6,30 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://psilocine.github.io">
-  <title>关于Flex布局的使用指南 | Psilo&#39;s TecBlog</title>
+  <title>从线性渐变属性探究 CSS 数据类型的重要性 | Psilo&#39;s TecBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面flex 布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧. 基本布局12345678&amp;lt;div class=&apos;father&apos;&amp;gt; // flex container  &amp;lt;div calss=&apos;son son-1&apos;&amp;gt;1&amp;lt;/div&amp;gt; // flex item  &amp;lt;div calss=&apos;son son-2&apos;&amp;gt;2&amp;lt;/div&amp;gt;&amp;lt;">
-<meta name="keywords" content="前端,CSS">
+  <meta name="description" content="为什么要关注 CSS 数据类型首先要知道一个前提，过去 CSS 按照大版本的方式进行迭代，如果有一个 CSS 特性存在争议，就会使该版本的发布时间延后。例如 CSS2.1 的规范在 2002 年开始制定，而一直到 2011 年 4 月才成为标准，效率十分低下。 为了加速没有争议的 CSS 特性的标准化，W3C 的 CSS 工作组决定将 CSS 模块化。带来的好处就是浏览器支持的特性越来越多，越来越">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Flex布局的使用指南">
-<meta property="og:url" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/index.html">
+<meta property="og:title" content="从线性渐变属性探究 CSS 数据类型的重要性">
+<meta property="og:url" content="https://psilocine.github.io/2021/09/13/从线性渐变属性探究-CSS-数据类型的重要性/index.html">
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
-<meta property="og:description" content="写在前面flex 布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧. 基本布局12345678&amp;lt;div class=&apos;father&apos;&amp;gt; // flex container  &amp;lt;div calss=&apos;son son-1&apos;&amp;gt;1&amp;lt;/div&amp;gt; // flex item  &amp;lt;div calss=&apos;son son-2&apos;&amp;gt;2&amp;lt;/div&amp;gt;&amp;lt;">
+<meta property="og:description" content="为什么要关注 CSS 数据类型首先要知道一个前提，过去 CSS 按照大版本的方式进行迭代，如果有一个 CSS 特性存在争议，就会使该版本的发布时间延后。例如 CSS2.1 的规范在 2002 年开始制定，而一直到 2011 年 4 月才成为标准，效率十分低下。 为了加速没有争议的 CSS 特性的标准化，W3C 的 CSS 工作组决定将 CSS 模块化。带来的好处就是浏览器支持的特性越来越多，越来越">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-between.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-around.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/2_flex-start.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/2_baseline.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/3_stretch.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/3_space-around.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/4_flex-grow.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/5_flex-shrink.jpg">
-<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/6_align-self.jpg">
-<meta property="og:updated_time" content="2021-07-02T03:20:30.656Z">
+<meta property="og:image" content="https://github.com/Psilocine/TechMeme/blob/main/meme/common/666.png?raw=true">
+<meta property="og:image" content="https://raw.githubusercontent.com/Psilocine/TechMeme/main/meme/common/common_02.jpg">
+<meta property="og:image" content="https://github.com/Psilocine/TechMeme/blob/main/meme/common/common_06.jpg?raw=true">
+<meta property="og:image" content="https://saas-base.cdnjtzy.com/sns/20210910/3c0167b39676f6f31041f1824ac74abf.png">
+<meta property="og:image" content="https://saas-base.cdnjtzy.com/sns/20210910/080dbea3e84048f6295ce50d3e7807bd.png">
+<meta property="og:image" content="https://saas-base.cdnjtzy.com/sns/20210910/edfc7a26742a3b91ed63bfcac4908b2d.png">
+<meta property="og:image" content="https://saas-base.cdnjtzy.com/sns/20210910/1b7fabfbd77ee67f4fec6f6d48097fd4.png">
+<meta property="og:image" content="https://github.com/Psilocine/TechMeme/blob/main/meme/common/common_05.jpg?raw=true">
+<meta property="og:image" content="https://github.com/Psilocine/TechMeme/blob/main/meme/common/ending.gif?raw=true">
+<meta property="og:updated_time" content="2021-09-13T02:41:18.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Flex布局的使用指南">
-<meta name="twitter:description" content="写在前面flex 布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧. 基本布局12345678&amp;lt;div class=&apos;father&apos;&amp;gt; // flex container  &amp;lt;div calss=&apos;son son-1&apos;&amp;gt;1&amp;lt;/div&amp;gt; // flex item  &amp;lt;div calss=&apos;son son-2&apos;&amp;gt;2&amp;lt;/div&amp;gt;&amp;lt;">
-<meta name="twitter:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-between.jpg">
+<meta name="twitter:title" content="从线性渐变属性探究 CSS 数据类型的重要性">
+<meta name="twitter:description" content="为什么要关注 CSS 数据类型首先要知道一个前提，过去 CSS 按照大版本的方式进行迭代，如果有一个 CSS 特性存在争议，就会使该版本的发布时间延后。例如 CSS2.1 的规范在 2002 年开始制定，而一直到 2011 年 4 月才成为标准，效率十分低下。 为了加速没有争议的 CSS 特性的标准化，W3C 的 CSS 工作组决定将 CSS 模块化。带来的好处就是浏览器支持的特性越来越多，越来越">
+<meta name="twitter:image" content="https://github.com/Psilocine/TechMeme/blob/main/meme/common/666.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -149,63 +149,237 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-关于Flex布局的使用指南" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-从线性渐变属性探究-CSS-数据类型的重要性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      关于Flex布局的使用指南
+      从线性渐变属性探究 CSS 数据类型的重要性
     </h1>
   
 
         
-        <a href="/2018/02/23/关于Flex布局的使用指南/" class="archive-article-date">
-  	<time datetime="2018-02-23T15:56:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
+        <a href="/2021/09/13/从线性渐变属性探究-CSS-数据类型的重要性/" class="archive-article-date">
+  	<time datetime="2021-09-13T02:38:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>flex 布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧.</p>
-<h4 id="基本布局"><a href="#基本布局" class="headerlink" title="基本布局"></a>基本布局</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class='father'&gt; // flex container</span><br><span class="line">  &lt;div calss='son son-1'&gt;1&lt;/div&gt; // flex item</span><br><span class="line">  &lt;div calss='son son-2'&gt;2&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="flex-container-属性"><a href="#flex-container-属性" class="headerlink" title="flex container 属性"></a>flex container 属性</h4><p>flex 规定 flex container 的横向为主轴(main axis), 纵向为交叉轴(cross axis)<br>1.flex-direction 指定 flex item 是如何布局的. 默认为 row, 即 flex item 从左至右横向排列</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  flex-direction: row / row-reverse / column / column-reverse;</span><br><span class="line">                        (横向右至左) (纵向上至下) (纵向下至上)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h2 id="为什么要关注-CSS-数据类型"><a href="#为什么要关注-CSS-数据类型" class="headerlink" title="为什么要关注 CSS 数据类型"></a>为什么要关注 CSS 数据类型</h2><p>首先要知道一个前提，过去 CSS 按照大版本的方式进行迭代，如果有一个 CSS 特性存在争议，就会使该版本的发布时间延后。例如 CSS2.1 的规范在 2002 年开始制定，而一直到 2011 年 4 月才成为标准，效率十分低下。</p>
+<p>为了加速没有争议的 CSS 特性的标准化，W3C 的 CSS 工作组决定将 CSS 模块化。带来的好处就是浏览器支持的特性越来越多，越来越快。</p>
+<p>所以以后就没有 CSS4 这一说了，其实 CSS3 也已经解体了。</p>
+<p>短时间内大量的 CSS 新特性出现，恰恰如果按之前靠死记 key-value 的形式，这将是坏处。好在 CSS 新的特性有了明确的 CSS 数据类型划分，因此只需要记忆 CSS 数据类型即可</p>
 <a id="more"></a>
 
-<p>2.flex-wrap 指定 flex-item 能否自动换行. 默认为 nowrap, 即子元素不换行排列</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  flex-wrap: nowrap / wrap / wrap-reverse ;</span><br><span class="line">                  (多行显示) (多行显示,从下至上显示成多行)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>3.flex-flow 是 flex-direction 和 flex-wrap 的缩写</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  <span class="selector-tag">flex-flow</span>: <span class="selector-tag">row</span> <span class="selector-tag">nowrap</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="什么是-CSS-数据类型"><a href="#什么是-CSS-数据类型" class="headerlink" title="什么是 CSS 数据类型"></a>什么是 CSS 数据类型</h2><p>一个 CSS 数据类型和用法由三部分组成：</p>
+<ul>
+<li>数据类型名称：保守估计有50个，如 gradient、color</li>
+<li>keyword：关键字，如 to、from、at、ease、auto</li>
+<li>符号：分为字面符号，组合符号，数量符号</li>
+</ul>
+<p>举个例子， <code>&lt;gradient&gt;</code> 的线性渐变 <code>linear-gradient</code> 的语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">linear-gradient(</span><br><span class="line">    [ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]? &lt;color-stop-list&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>4.jusitfy-content 指定 flex item 在主轴线上的对齐方式, 即水平方向. 默认为 flex-start, 子元素靠左对齐.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  justify-content: flex-start / flex-end / center / space-between / space-around;</span><br><span class="line">                                (靠右对齐)  (居中)</span><br><span class="line">  <span class="selector-tag">space-between</span>: 等间距排列, <span class="selector-tag">firstChild</span>和<span class="selector-tag">lastChild</span>靠两侧边缘, 如图一</span><br><span class="line">  <span class="selector-tag">space-around</span>: 等间距排列, <span class="selector-tag">firstChild</span>和<span class="selector-tag">lastChild</span>与两侧边缘也有间隔, 如图二</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由上得知，线性渐变的语法包括了三个 CSS 数据类型，包括 <code>&lt;angle&gt;</code>、<code>&lt;side-or-corner&gt;</code> 和 <code>&lt;color-stop-list&gt;</code>。只要我们了解这三个数据类型的用法，哪怕没用过线性渐变属性，也能轻松应对。</p>
+<p><img src="//github.com/Psilocine/TechMeme/blob/main/meme/common/666.png?raw=true" alt="666"></p>
+<h3 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h3><p>为了看懂 CSS 数据类型，我们必须先了解符号的意义</p>
+<p>字面符号</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>,</td>
+<td>并列分隔符</td>
+<td>用来分隔并列值，或者分隔函数的参数值</td>
+</tr>
+<tr>
+<td>/</td>
+<td>缩写分隔符</td>
+<td>用来分隔一个值的多个部分，在CSS缩写用于分离类型相同且属性不同的值。如 font 缩写的 font-size / line-height</td>
+</tr>
+</tbody></table>
+<p>组合符号</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>并列</td>
+<td>普通空格字符，表示各部分必须按顺序出现</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>与</td>
+<td>各部分必须出现，但可以不按顺序</td>
+</tr>
+<tr>
+<td>||</td>
+<td>或</td>
+<td>各部分至少出现一个，但可以不按顺序</td>
+</tr>
+<tr>
+<td>|</td>
+<td>互斥</td>
+<td>各部分只能出现一个</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>方括号</td>
+<td>优先级最高</td>
+</tr>
+</tbody></table>
+<p>数量符号</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>无数量符号</td>
+<td>出现一次</td>
+</tr>
+<tr>
+<td>*</td>
+<td>星号</td>
+<td>可以出现任意次数</td>
+</tr>
+<tr>
+<td>+</td>
+<td>加号</td>
+<td>可以出现 1 次或多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>问号</td>
+<td>可以出现 0 次或 1 次</td>
+</tr>
+<tr>
+<td>{A, B}</td>
+<td>花括号</td>
+<td>出现最少 A 次，最多 B 次</td>
+</tr>
+<tr>
+<td>#</td>
+<td>井号</td>
+<td>可以出现一次或多次，但多次出现必须以逗号分隔</td>
+</tr>
+<tr>
+<td>!</td>
+<td>感叹号</td>
+<td>表示当前分组必须产生一个值，该符号多出现在方括号 [] 的后面</td>
+</tr>
+</tbody></table>
+<p><img src="https://raw.githubusercontent.com/Psilocine/TechMeme/main/meme/common/common_02.jpg" alt="no_technology"></p>
+<h2 id="管中窥豹：-lt-gradient-gt"><a href="#管中窥豹：-lt-gradient-gt" class="headerlink" title="管中窥豹：&lt;gradient&gt;"></a>管中窥豹：<code>&lt;gradient&gt;</code></h2><p>通过查阅 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient" target="_blank" rel="noopener">MDN</a> 得知，<code>&lt;gradient&gt;</code> 类型有四种值：</p>
+<ul>
+<li>线性渐变 linear gradient</li>
+<li>径向渐变 radial gradient</li>
+<li>重复渐变 repeating gradient</li>
+<li>锥形渐变 conic gradient</li>
+</ul>
+<p>由于篇幅问题，本文只讨论线性渐变</p>
+<h3 id="线性渐变-linear-gradient"><a href="#线性渐变-linear-gradient" class="headerlink" title="线性渐变 linear gradient"></a>线性渐变 linear gradient</h3><p>角度默认值为 to bottom。刚刚提过，语法是</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax: linear-gradient(</span><br><span class="line">hexo[ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]? &lt;color-stop-list&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>图一 space-between<img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-between.jpg" alt="space-between"><br>图二 space-around<img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-around.jpg" alt="space-around"></p>
-<p>5.align-items 指定 flex item 在交叉轴上的对齐方式, 即垂直方向. 默认为 stretch, 子元素如无定义高度, 将被拉伸以适应父容器(默认 flex-direction 为 row)</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  align-items: stretch / center / flex-start / flex-end / baseline (垂直对齐) (在交叉轴起始对齐)</span><br><span class="line">    (于底对齐) (按照子元素里的文本基线对齐);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面学习涉及的 CSS 数据类型：</p>
+<p><code>&lt;angle&gt;</code> 表示角度的大小。有正负符号，数值为0时，单位可以省略。单位有：</p>
+<ul>
+<li>deg（degress, 角度）360deg = 完整的圆</li>
+<li>rad（radians，弧度）2π * rad = 360deg</li>
+<li>turn（turns，圈数）1turn = 360deg</li>
+<li>grad（gradians，百分度）400grad = 360deg</li>
+</ul>
+<hr>
+<p><code>&lt;side-or-corner&gt;</code> 表示边角类型。主要用在线性渐变中。</p>
+<ul>
+<li>Syntax：[ left | right ] || [ top | bottom ]</li>
+</ul>
+<hr>
+<p><code>&lt;color-stop-list&gt;</code> 表示多个 <code>&lt;linear-color-stop&gt;</code> 的集合。</p>
+<ul>
+<li>Syntax: [ <code>&lt;linear-color-stop</code>&gt; [, <code>&lt;color-hint&gt;</code>? ]? ]#, <code>&lt;linear-color-stop&gt;</code></li>
+</ul>
+<hr>
+<p><code>&lt;linear-color-stop&gt;</code> 表示颜色断点，多出现在渐变中。</p>
+<ul>
+<li>Syntax：<code>&lt;color&gt;</code> [ <code>&lt;color-stop-length&gt;</code> ]?</li>
+</ul>
+<hr>
+<p><code>&lt;color&gt;</code> 表示色值，可以是：</p>
+<ul>
+<li>颜色关键字 blue, transparent, etc.</li>
+<li>currentColor</li>
+<li>rgb()、rgba()</li>
+<li>hsl()、hsla()</li>
+</ul>
+<hr>
+<p><code>&lt;color-hint&gt;</code> 表示渐变在相邻颜色之间如何进行插值，如果省略，颜色过渡的中点是两个颜色之间的中点。</p>
+<hr>
+<p><code>&lt;color-stop-length&gt;</code> 表示颜色的数值参数。</p>
+<ul>
+<li>Syntax：[ <code>&lt;percentage&gt;</code> | <code>&lt;length&gt;</code> ]{1, 2}</li>
+</ul>
+<hr>
+<p><code>&lt;percentage&gt;</code> 表示百分比数值。有正负符号。</p>
+<hr>
+<p><code>&lt;length&gt;</code> 表示距离值。</p>
+<ul>
+<li>相对长度单位：em, rem, ch, ex</li>
+<li>视区相关长度：vh, vw, vmin, vmax</li>
+<li>绝对长度单位：px, cm, mm, in, pc, pt</li>
+</ul>
+<p><img src="https://github.com/Psilocine/TechMeme/blob/main/meme/common/common_06.jpg?raw=true" alt="can&#39;t learn anymore"></p>
+<p>不知不觉掌握了好多 CSS 数据类型了呢，想想还觉得挺激动的。有了上面的背书，我们就直接下手看这个属性。</p>
+<ol>
+<li><p><code>background: linear-gradient(pink, skyblue);</code> 上述有提到默认值是 to bottom，第一个值 pink 的 <code>&lt;color-stop-length&gt;</code> 默认值是 0%，最后一个值 skyblue 默认值为 100%，所以效果是这样的：<br><img src="https://saas-base.cdnjtzy.com/sns/20210910/3c0167b39676f6f31041f1824ac74abf.png" alt="3"><br>等效于 <code>background: linear-gradient(to bottom, pink 0%, skyblue 100%);</code></p>
+</li>
+<li><p><code>background: linear-gradient(0.25turn, pink, skyblue);</code> 就是<code>to right</code><br><img src="https://saas-base.cdnjtzy.com/sns/20210910/080dbea3e84048f6295ce50d3e7807bd.png" alt="4"></p>
+</li>
+<li><p><code>&lt;color-hint&gt;</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 指定了&lt;color-hint&gt;在 50%，所以能见到明显的分割线，不会有渐变的过程 */</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(0<span class="selector-class">.25turn</span>, <span class="selector-tag">pink</span> 50%, 50%, <span class="selector-tag">skyblue</span>);</span><br><span class="line"><span class="comment">/* 等同于 */</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(0<span class="selector-class">.25turn</span>, <span class="selector-tag">pink</span> 50%, <span class="selector-tag">skyblue</span> 50% 100%);</span><br></pre></td></tr></table></figure>
 
-<p>flex-start<img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/2_flex-start.jpg" alt="flex-start"><br>baseline<img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/2_baseline.jpg" alt="baseline"></p>
-<p>6.align-content 指定交叉轴上多余空间 默认值为 stretch</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  align-content: stretch / center / flex-start / flex-end / space-between / space-around</span><br><span class="line">  <span class="selector-tag">center</span>: (居中对齐, 没有多余空间)</span><br><span class="line">  <span class="selector-tag">flex-start</span>: (在交叉轴起始对齐,没有行行多余空间)</span><br><span class="line">  <span class="selector-tag">flex-end</span>: (于底对齐,没有多余空间)</span><br><span class="line">  <span class="selector-tag">space-between</span>: (各行之间留有空白)</span><br><span class="line">  <span class="selector-tag">space-around</span>: (各行之前之间之后都留有空白)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="https://saas-base.cdnjtzy.com/sns/20210910/edfc7a26742a3b91ed63bfcac4908b2d.png" alt="5"></p>
+<ol start="4">
+<li>拓展<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">linear-gradient</span>(217<span class="selector-tag">deg</span>, <span class="selector-tag">rgba</span>(255,0,0,<span class="selector-class">.8</span>), <span class="selector-tag">rgba</span>(255,0,0,0) 70<span class="selector-class">.71</span>%),</span><br><span class="line"><span class="selector-tag">linear-gradient</span>(127<span class="selector-tag">deg</span>, <span class="selector-tag">rgba</span>(0,255,0,<span class="selector-class">.8</span>), <span class="selector-tag">rgba</span>(0,255,0,0) 70<span class="selector-class">.71</span>%),</span><br><span class="line"><span class="selector-tag">linear-gradient</span>(336<span class="selector-tag">deg</span>, <span class="selector-tag">rgba</span>(0,0,255,<span class="selector-class">.8</span>), <span class="selector-tag">rgba</span>(0,0,255,0) 70<span class="selector-class">.71</span>%);</span><br></pre></td></tr></table></figure>
 
-<p>stretch<img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/3_stretch.jpg" alt="stretch"><br>space-around<img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/3_space-around.jpg" alt="space-around"></p>
-<h4 id="flex-item-属性"><a href="#flex-item-属性" class="headerlink" title="flex item 属性"></a>flex item 属性</h4><p>1.order 指定排列顺序, 可正可负, 值越小排越前. 默认都是 0</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son-2</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span> // 排在son-<span class="number">1</span>前面;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.flex-grow 当父元素存在剩余空间时, 可以用来指定子元素的拉伸比例. 默认值为 0, 负值无效<br><img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/4_flex-grow.jpg" alt="flex-grow"><br>3.flex-shrink 当父元素空间不足时, 可以用来指定子元素的收缩比例. 负值无效, 默认为 1, 即会收缩.<br>如果设置为 0, 就不收缩将保持原来的大小.<br><img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/5_flex-shrink.jpg" alt="flex-shrink"><br>4.flex-basis 为子元素分配初始大小, 默认值为 auto</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son-2</span> &#123;</span><br><span class="line">  ...,</span><br><span class="line">  <span class="selector-tag">flex-grow</span>: 0;</span><br><span class="line">  <span class="selector-tag">flex-skrink</span>: 0;</span><br><span class="line">  flex-basis: 400px; // 结合上两个属性, 该元素400px宽度不会变化.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>5.flex 是 flex-grow flex-skrink flex-basis 的缩写, 此属性比较常用</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son-1</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son-2</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> auto;</span><br><span class="line">&#125;</span><br><span class="line">// son-1固定宽度100px, son-2自适应</span><br></pre></td></tr></table></figure>
-
-<p>6.align-self 指定单个 flex-item 允许更改交叉轴的对齐方式, 即垂直方向.<br><img src="//psilocine.github.io/2018/02/23/关于Flex布局的使用指南/6_align-self.jpg" alt="align-self"></p>
-<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>1.伪元素::first-line ::first-letter 在 flex-container 不起作用<br>2.float clear vertical-align 在 flex-item 不起作用</p>
+</li>
+</ol>
+<p><img src="https://saas-base.cdnjtzy.com/sns/20210910/1b7fabfbd77ee67f4fec6f6d48097fd4.png" alt="7"></p>
+<p>从上面的例子，我们可以反推 background-image 语法的数据类型可能有 <code>&lt;gradient&gt;#</code>，通过查阅 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image#bg-image" target="_blank" rel="noopener">MDN</a> 得知，确实如此。</p>
+<p><img src="https://github.com/Psilocine/TechMeme/blob/main/meme/common/common_05.jpg?raw=true" alt="nice"></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>CSS 数据类型能够帮助我们快速知道某个新特性的 value，减少错误赋值，可以说是一大利器。</p>
+<p>比如我们不认识下面两个属性，但是通过对 <code>&lt;color&gt;</code> 的认识，就可以知道该属性能够赋予的 value 有哪些了～</p>
+<ol>
+<li>accent-color: <code>&lt;color&gt;</code></li>
+<li>caret-color: <code>&lt;color&gt;</code></li>
+</ol>
+<p><img src="https://github.com/Psilocine/TechMeme/blob/main/meme/common/ending.gif?raw=true" alt="ending"></p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types" target="_blank" rel="noopener">MDN: CSS data types</a></li>
+<li><a href="https://www.zhangxinxu.com/wordpress/2019/11/css-value-type/" target="_blank" rel="noopener">张鑫旭</a></li>
+</ul>
 
       
 
@@ -218,10 +392,6 @@
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
@@ -279,7 +449,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://psilocine.github.io/2021/09/13/从线性渐变属性探究-CSS-数据类型的重要性/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,18 +463,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/01/2018年书单推荐/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2018年书单推荐
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/15/我认为的Vue官方文档重点-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我认为的Vue官方文档重点(1)</div>
+    <a href="/2021/07/13/2021年书单推荐/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2021年书单推荐</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -320,8 +481,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/", 
-    sourceId: "关于Flex布局的使用指南",
+    url: "https://psilocine.github.io/2021/09/13/从线性渐变属性探究-CSS-数据类型的重要性/", 
+    sourceId: "从线性渐变属性探究-CSS-数据类型的重要性",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
