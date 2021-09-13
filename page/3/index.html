@@ -136,6 +136,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-浅析CSS实现Footer置底的几种方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/05/浅析CSS实现Footer置底的几种方式/">浅析CSS实现Footer置底的几种方式</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/05/浅析CSS实现Footer置底的几种方式/" class="archive-article-date">
+  	<time datetime="2017-11-05T14:40:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>Footer置底就是让footer部分始终能在浏览器窗口的最底部.</p>
+<ol>
+<li>当页面内容超过vh时候, footer能够被推倒页面底部;</li>
+<li>当页面内容不够vh时, footer能保持在浏览器窗口底部.</li>
+</ol>
+<h3 id="将内容部分的底部外边距设为负数"><a href="#将内容部分的底部外边距设为负数" class="headerlink" title="将内容部分的底部外边距设为负数"></a>将内容部分的底部外边距设为负数</h3><p>把内容content部分最小高度设为100%. 当content部分高度比浏览器高度小时, content负边距能让footer保持在浏览器窗口底部.<br>注意负边距数值应和.push, .footer高度一致</p>
+        
+          <a class="article-more-a" href="/2017/11/05/浅析CSS实现Footer置底的几种方式/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/05/浅析CSS实现Footer置底的几种方式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-浅析Js的for循环方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -782,72 +852,6 @@ div {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/16/简述CSS3的一些属性(1)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-hexo d时遇到的新错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/21/hexo d时遇到的新错误/">hexo d时遇到的新错误</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/21/hexo d时遇到的新错误/" class="archive-article-date">
-  	<time datetime="2017-05-20T17:21:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>我发现github pages不能被百度索引, 想解决这一方法, 发现可以用托管到coding.net来解决<br>按照网络上的步骤, 我在 _config.yml里repo设置了多个仓库以后, hexo d就出现了如下错误</p>
-<ol>
-<li>permission denied publickey</li>
-<li>fatal: could not read from remote respository</li>
-</ol>
-<p>解决方法网上有很多种, 但是我都失败了. 最后是把.ssh的id公钥私钥删掉, 用ssh-keygen -t rsa -C ‘你的邮箱名’生成新的key, 在github和coding新建后, 发现还是不行, 把repo里的coding仓库删掉以后即可.<br>不知道这算不算解决, 不过我还是放弃了同步多个仓库这个想法</p>
-        
-          <a class="article-more-a" href="/2017/05/21/hexo d时遇到的新错误/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HEXO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/21/hexo d时遇到的新错误/">展开全文 >></a>
         </p>
       
 
