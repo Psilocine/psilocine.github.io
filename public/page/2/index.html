@@ -136,6 +136,158 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-indexedDB浅析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/25/indexedDB浅析/">IndexedDB浅析</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/25/indexedDB浅析/" class="archive-article-date">
+  	<time datetime="2021-03-25T03:21:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>目前支撑的业务有大量数据存储在WebStorage的情况，考虑到WebStorage容量的限制，研究了一下浏览器提供的本地数据库————IndexedDB</p>
+<h4 id="IndexedDB概述"><a href="#IndexedDB概述" class="headerlink" title="IndexedDB概述"></a>IndexedDB概述</h4><p>IndexedDB是一种底层的异步API，是一种在用户浏览器中持久存储数据的方法。它允许您在不考虑网络的可用性，创建具有丰富查询能力的可离线Web应用程序。对于在客户端存储大量的结构化数据和不需要持久在线网络连接的应用程序中很有用。  </p>
+<p>通俗地说，IndexedDB 就是浏览器提供的本地数据库，它可以被网页脚本创建和操作。IndexedDB 允许储存大量数据，提供查找接口，还能建立索引。就数据库类型而言，IndexedDB 不属于关系型数据库（不支持 SQL 查询语句），更接近 NoSQL 数据库（简单好使）。  </p>
+<p>值得一提的是，过去的竞争规范（WebSQL）数据库是关系型数据库（复杂），但是已经被W3C废弃。</p>
+        
+          <a class="article-more-a" href="/2021/03/25/indexedDB浅析/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/25/indexedDB浅析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-我花三个月汉化了一个文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/24/我花三个月汉化了一个文档/">我花三个月汉化了一个文档</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/24/我花三个月汉化了一个文档/" class="archive-article-date">
+  	<time datetime="2020-08-24T09:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>我汉化的是空间分析库 Turf.js。主要用来实现空间几何 GeoJSON 的距离面积计算、关系判断等等。该库是国外团队研发，目前没有中文版本。每次需要查阅时都比较困难，想到还有其他同学也受此困扰，我决定汉化该文档。一来汉化后大家可以受益，二来我也能在汉化的过程中学习 Turf 的所有方法，同时标注出我在学习过程中值得注意的点，避免大家踩坑</p>
+<h4 id="汉化文档地址"><a href="#汉化文档地址" class="headerlink" title="汉化文档地址"></a>汉化文档地址</h4><ul>
+<li><a href="https://psilocine.github.io/turfjs-docs-Zh-CN/">汉化文档地址</a></li>
+</ul>
+<p>Turf 是模块化的地理空间分析工具库。涵盖空间几何图形的测量、关系判断、坐标变换和偏移、辅助方法等具体场景，功能强大，模块化按需引入。</p>
+<p>但是 Turf 暂时没有中文文档，且官方文档冗长，对英语水平不高的同学不太友好。</p>
+<p>本项目的初衷是帮助想使用或者正在使用经常查阅 Turf 的同学提供一个中文版本的文档，方便大家学习和快速定位，提高效率。</p>
+<p>对于想使用 Turf 的同学来说，学习 GeoJSON 的格式是必须的，还不熟悉的同学请自行学习。下述是部分参考链接：</p>
+<ul>
+<li><p><a href="https://www.w3cschool.cn/doc_rethinkdb_java/rethinkdb_java-api-java-geojson-index.html" target="_blank" rel="noopener">w3cschool 入门</a></p>
+</li>
+<li><p><a href="http://geojson.io/#map=2/20.0/0.0" target="_blank" rel="noopener">在线绘制 GeoJSON</a></p>
+</li>
+</ul>
+<h4 id="建议反馈"><a href="#建议反馈" class="headerlink" title="建议反馈"></a>建议反馈</h4><ul>
+<li>在 <a href="https://github.com/Psilocine/turfjs-docs-Zh-CN" target="_blank" rel="noopener">turfjs-docs-Zh-CN</a> 仓库上提出 issue</li>
+<li>邮件发送至 <code>psilolau@foxmail.com</code></li>
+</ul>
+<h4 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h4><ul>
+<li><a href="http://turfjs.org/" target="_blank" rel="noopener">Turf.js | Advanced geospatial analysis</a></li>
+</ul>
+<h4 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h4><p>文档框架是用 vuepress 搭建，官方文档每个方法右侧有地图 demo，目前 vuepress 暂时没有该类型插件。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/24/我花三个月汉化了一个文档/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-写给自己的Markdown基本语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -676,138 +828,6 @@
 
 
   
-    <article id="post-我认为的Vue官方文档重点-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/03/我认为的Vue官方文档重点-2/">我认为的Vue官方文档重点(2)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/03/我认为的Vue官方文档重点-2/" class="archive-article-date">
-  	<time datetime="2018-03-03T15:46:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>文章大体会根据Vue官方文档(教程2.X)提供的学习路线<br>本文从 进入/离开 &amp; 列表过渡 -&gt; 状态过渡</p>
-<h3 id="进入-离开-amp-列表过渡"><a href="#进入-离开-amp-列表过渡" class="headerlink" title="进入/离开 &amp; 列表过渡"></a>进入/离开 &amp; 列表过渡</h3><p>1.想要vue的过渡transition标签有效, 必须和下列其一搭配</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. v-if（条件渲染）</span><br><span class="line">2. v-show（条件展示）</span><br><span class="line">3. 动态组件</span><br><span class="line">4. 在组建的根节点上，并且被vue实例DOM方法触发，如appendTo方法把组件添加到某个根节点上</span><br></pre></td></tr></table></figure>
-
-<p>2.过渡的类名, 会有6个class切换</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里的v 是过渡标签name里的值 如 &lt;transition name='fade'&gt; 则为 fade-enter</span></span><br><span class="line"><span class="number">1.</span> v-enter: 进入过渡的开始状态</span><br><span class="line"><span class="number">2.</span> v-enter-active: 过渡的状态, 在元素整个过渡过程中作用</span><br><span class="line"><span class="number">3.</span> v-enter-to: 进入过渡的结束状态</span><br><span class="line"><span class="number">4.</span> v-leave: 离开过渡的开始状态</span><br><span class="line"><span class="number">5.</span> v-leave-active: 过渡的状态, 在元素整个过渡过程中作用</span><br><span class="line"><span class="number">6.</span> v-leave-to: 离开过渡的结束状态</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/03/03/我认为的Vue官方文档重点-2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VUE</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/03/我认为的Vue官方文档重点-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-2018年书单推荐" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/01/2018年书单推荐/">2018年书单推荐</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/01/2018年书单推荐/" class="archive-article-date">
-  	<time datetime="2018-03-01T08:30:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>2018年读过的一些觉得不错的书 会持续更新至年尾</p>
-<ul>
-<li>Css世界<br>张鑫旭老师的新作, 我Tm吹爆, 开头序章把css形容成大众更易接受的小说题材, 让读者更容易阅读.</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/01/2018年书单推荐/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -915,19 +935,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HEXO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,6 +944,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -956,6 +968,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
               </li>
             
             <div class="clearfix"></div>
