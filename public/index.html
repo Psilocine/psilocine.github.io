@@ -270,6 +270,69 @@
 
 
   
+    <article id="post-base64-编码原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/05/base64-编码原理/">base64 编码原理</a>
+    </h1>
+  
+
+        
+        <a href="/2022/05/05/base64-编码原理/" class="archive-article-date">
+  	<time datetime="2022-05-05T07:30:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>base64 已经成为网络上常见的传输 8Bit 字节代码的编码方式之一。现代浏览器都已经支持原生的基于 base64 的 encode 和 decode，例如 <strong>btoa</strong> 和 <strong>atob</strong></p>
+<h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>之前网络传送渠道并不支持所有的字节，例如邮件只支持可见字符的传送，后来中文、日文等也有需求了；比如图片。要把不可打印的字符也能用可打印字符来表示，问题就能解决了，Base64 编码应运而生</p>
+<p>其实除了 base64 数据编码，还有 base32、base16，64 就是 64 个字符的意思。</p>
+        
+          <a class="article-more-a" href="/2022/05/05/base64-编码原理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/05/05/base64-编码原理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-图片格式选择" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -738,77 +801,6 @@
 
 
   
-    <article id="post-基于Inquirer实现命令行文件新增" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/29/基于Inquirer实现命令行文件新增/">基于Inquirer实现命令行文件新增</a>
-    </h1>
-  
-
-        
-        <a href="/2021/04/29/基于Inquirer实现命令行文件新增/" class="archive-article-date">
-  	<time datetime="2021-04-29T05:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>由于我们很多移动端项目是hybrid实现方案的特殊性，导致了多入口项目配置。<br>当每次新业务需求来临的时候，需要：</p>
-<ol>
-<li>手动配置入口文件、新增项目文件夹和文件</li>
-<li>从老页面拷贝入口文件代码（统一的全局依赖、组件等）</li>
-</ol>
-<p>如果能够把这部分机械工作解放，那是十分好的，因此该脚本诞生。</p>
-<h4 id="Inquirer概述"><a href="#Inquirer概述" class="headerlink" title="Inquirer概述"></a>Inquirer概述</h4>
-        
-          <a class="article-more-a" href="/2021/04/29/基于Inquirer实现命令行文件新增/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/29/基于Inquirer实现命令行文件新增/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -932,15 +924,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
