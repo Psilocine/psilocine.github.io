@@ -136,6 +136,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-浅析axios" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/11/浅析axios/">浅析axios</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/11/浅析axios/" class="archive-article-date">
+  	<time datetime="2018-04-11T14:50:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>vue官方已经确定不要维护vue-resource, 转而推荐axios. axios有何力量使得官方都推荐使用呢?</p>
+<h4 id="最简单的axios例子"><a href="#最简单的axios例子" class="headerlink" title="最简单的axios例子"></a>最简单的axios例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios(<span class="string">'api'</span>); <span class="comment">// 默认get请求</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/04/11/浅析axios/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VUE</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/11/浅析axios/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-浅析Vuex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -750,104 +816,9 @@
 
 
   
-    <article id="post-我收集的一些基础面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/22/我收集的一些基础面试题/">我收集的一些基础面试题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/22/我收集的一些基础面试题/" class="archive-article-date">
-  	<time datetime="2017-09-22T08:29:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>我收集的也有我遇到过的面试题, 会持续更新.</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><ul>
-<li>前端工程化的理解<br>模块化、组件化、规范化、自动化</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.模块化 将文件拆分成互相依赖的小文件, 多人协作开发后, 再进行统一的拼装. js模块化 commonjs amd cmd</span><br><span class="line">css模块化 命名风格. 在类前加规范, 如布局(grid)(.g-xxx) 功能(function)(.f-xxx) 2.组件化</span><br><span class="line">每个包含html+css+js完备的单元, 成为组件 3.规范化 目录结构的确定, 前后端接口规范, 组件命名规范</span><br><span class="line">commit描述规范 4.自动化 简单的机械劳动, 让机器帮我们完成. 线上发布 =&gt; 使用脚本 图片<span class="tag">&lt;<span class="name">20kb</span> =&gt;</span></span><br><span class="line">webpack转base64</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如何 html 中开启和关闭 dns 预读取</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- on打开 off关闭 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-dns-prefetch-control"</span> <span class="attr">content</span>=<span class="string">"off"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 方法二 通过link的rel属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"//"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>doctype 的作用</li>
-</ul>
-<ol>
-<li>告知浏览器的解析器用什么文档标准解析这个文档, doctype 不存在或不正确会导致文档以怪异模式呈现</li>
-</ol>
-<ul>
-<li>前端渲染和后端渲染的区别</li>
-</ul>
-<ol>
-<li>后端渲染优势: 开发速度快, 不涉及前端交互; seo 友好度较高, 能够一次性渲染页面, 利于搜索引擎抓取. 劣势: 可维护性差, 因为是一次性渲染页面; 编码效率低, 前后端代码混在一起; 无法进行跨平台开发.</li>
-<li>前端渲染优势: 端口分离, 专注于前端; 可维护性高; 跨平台; 响应速度快. 劣势: 不利于 seo 优化; 首次开发成本较高; 安全性低.</li>
-</ol>
-<ul>
-<li>canvas 和 svg 在绘图有哪些优劣</li>
-</ul>
-<ol>
-<li>canvas 依赖分辨率; 不支持事件处理器; 弱的文本渲染能力; 能够以 .png 或 .jpg 格式保存结果图像; 最适合图像密集型的游戏，其中的许多对象会被频繁重绘</li>
-<li>svg 不依赖分辨率; 支持事件处理器; 最适合带有大型渲染区域的应用程序（比如谷歌地图）; 复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）; 不适合游戏应用</li>
-</ol>
-        
-          <a class="article-more-a" href="/2017/09/22/我收集的一些基础面试题/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/22/我收集的一些基础面试题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -964,6 +935,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -973,10 +948,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
