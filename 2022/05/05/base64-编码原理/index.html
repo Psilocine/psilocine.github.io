@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面base64 已经成为网络上常见的传输 8Bit 字节代码的编码方式之一。现代浏览器都已经支持原生的基于 base64 的 encode 和 decode，例如 btoa 和 atob 由来之前网络传送渠道并不支持所有的字节，例如邮件只支持可见字符的传送，后来中文、日文等也有需求了；比如图片。要把不可打印的字符也能用可打印字符来表示，问题就能解决了，Base64 编码应运而生 其实除了 b">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/.io//1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//2.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//3.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/05/05/base64-编码原理/1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/05/05/base64-编码原理/2.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/05/05/base64-编码原理/3.png">
 <meta property="og:updated_time" content="2023-10-23T07:51:24.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="base64 编码原理">
 <meta name="twitter:description" content="写在前面base64 已经成为网络上常见的传输 8Bit 字节代码的编码方式之一。现代浏览器都已经支持原生的基于 base64 的 encode 和 decode，例如 btoa 和 atob 由来之前网络传送渠道并不支持所有的字节，例如邮件只支持可见字符的传送，后来中文、日文等也有需求了；比如图片。要把不可打印的字符也能用可打印字符来表示，问题就能解决了，Base64 编码应运而生 其实除了 b">
-<meta name="twitter:image" content="https://psilocine.github.io/.io//1.png">
+<meta name="twitter:image" content="https://psilocine.github.io/2022/05/05/base64-编码原理/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -191,7 +191,7 @@
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>使用 base64 时都会先定义一个类似的数组，下述 64 个字符用 6 个 bit 位就可以表示，一个字节有 8 个 bit 位，剩下两个就浪费掉了，不得不牺牲一部分空间了。</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, ...<span class="string">"a"</span>, <span class="string">"b"</span>, ...<span class="string">"0"</span>, <span class="string">"1"</span>, ...<span class="string">"+"</span>, <span class="string">"/"</span>];</span><br><span class="line"><span class="comment">// A-Z a-z 0-9 + / 64 个可打印字符</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/.io//1.png" alt="figure"></p>
+<p><img src="1.png" alt="figure"></p>
 <h3 id="转换步骤"><a href="#转换步骤" class="headerlink" title="转换步骤"></a>转换步骤</h3><ol>
 <li>将待转换的字符每三个字节分为一组，每个字节占 8bit，那么共有 24 个二进制位</li>
 <li>将上面的 24 个二进制位每 6 个一组，分为 4 组</li>
@@ -203,7 +203,7 @@
 <li>M、a、n 对应的表里（ascii 码值）的值为 77、97、110，对应二进制值为 01001101、01100001、01101110</li>
 <li>如图红色框，将 24 位每 6 位二进制位一组分为四组</li>
 </ol>
-<p><img src="/.io//2.png" alt="figure"></p>
+<p><img src="2.png" alt="figure"></p>
 <ol start="3">
 <li>每组补 0，扩展位 32 个二进制位，此时变为四个字节：00010010、00010110、00000101、00101110，对应 ascii 码值为：19、22、5、46</li>
 <li>在表中查找，分别对应 T、W、F、u。因此 “Man” 编码之后为：”TWFu“</li>
@@ -212,7 +212,7 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"China，中国"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.btoa(<span class="built_in">window</span>.encodeURIComponent(str));</span><br><span class="line"><span class="comment">// "Q2hpbmElRUYlQkMlOEMlRTQlQjglQUQlRTUlOUIlQkQ="</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.decodeURIComponent(</span><br><span class="line">  <span class="built_in">window</span>.atob(<span class="string">"Q2hpbmElRUYlQkMlOEMlRTQlQjglQUQlRTUlOUIlQkQ="</span>)</span><br><span class="line">);</span><br><span class="line"><span class="comment">// "China，中国"</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="位数不足的情况"><a href="#位数不足的情况" class="headerlink" title="位数不足的情况"></a>位数不足的情况</h3><p>因为转换是每三个字节一组，必定存在只剩一个字节或者两个字节的情况，如果字节数不够，需要做向后补 0 处理，若 8bit 位全是 0，即表中无值，则用 “=” 字符作为填充字符补上</p>
-<p><img src="/.io//3.png" alt="figure"></p>
+<p><img src="3.png" alt="figure"></p>
 
       
 

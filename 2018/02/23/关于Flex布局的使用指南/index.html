@@ -16,20 +16,20 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面flex 布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧. 基本布局12345678&amp;lt;div class=&apos;father&apos;&amp;gt; // flex container  &amp;lt;div calss=&apos;son son-1&apos;&amp;gt;1&amp;lt;/div&amp;gt; // flex item  &amp;lt;div calss=&apos;son son-2&apos;&amp;gt;2&amp;lt;/div&amp;gt;&amp;lt;">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/.io//1_space-between.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//1_space-around.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//2_flex-start.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//2_baseline.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//3_stretch.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//3_space-around.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//4_flex-grow.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//5_flex-shrink.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//6_align-self.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-between.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-around.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/2_flex-start.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/2_baseline.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/3_stretch.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/3_space-around.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/4_flex-grow.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/5_flex-shrink.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/6_align-self.jpg">
 <meta property="og:updated_time" content="2023-10-23T07:51:24.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Flex布局的使用指南">
 <meta name="twitter:description" content="写在前面flex 布局, 在移动端也是一大布局利器之一, 跟笔者复习一遍吧. 基本布局12345678&amp;lt;div class=&apos;father&apos;&amp;gt; // flex container  &amp;lt;div calss=&apos;son son-1&apos;&amp;gt;1&amp;lt;/div&amp;gt; // flex item  &amp;lt;div calss=&apos;son son-2&apos;&amp;gt;2&amp;lt;/div&amp;gt;&amp;lt;">
-<meta name="twitter:image" content="https://psilocine.github.io/.io//1_space-between.jpg">
+<meta name="twitter:image" content="https://psilocine.github.io/2018/02/23/关于Flex布局的使用指南/1_space-between.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -186,25 +186,25 @@
 <p>4.jusitfy-content 指定 flex item 在主轴线上的对齐方式, 即水平方向. 默认为 flex-start, 子元素靠左对齐.</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  justify-content: flex-start / flex-end / center / space-between / space-around;</span><br><span class="line">                                (靠右对齐)  (居中)</span><br><span class="line">  <span class="selector-tag">space-between</span>: 等间距排列, <span class="selector-tag">firstChild</span>和<span class="selector-tag">lastChild</span>靠两侧边缘, 如图一</span><br><span class="line">  <span class="selector-tag">space-around</span>: 等间距排列, <span class="selector-tag">firstChild</span>和<span class="selector-tag">lastChild</span>与两侧边缘也有间隔, 如图二</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>图一 space-between<img src="/.io//1_space-between.jpg" alt="space-between"><br>图二 space-around<img src="/.io//1_space-around.jpg" alt="space-around"></p>
+<p>图一 space-between<img src="1_space-between.jpg" alt="space-between"><br>图二 space-around<img src="1_space-around.jpg" alt="space-around"></p>
 <p>5.align-items 指定 flex item 在交叉轴上的对齐方式, 即垂直方向. 默认为 stretch, 子元素如无定义高度, 将被拉伸以适应父容器(默认 flex-direction 为 row)</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  align-items: stretch / center / flex-start / flex-end / baseline (垂直对齐) (在交叉轴起始对齐)</span><br><span class="line">    (于底对齐) (按照子元素里的文本基线对齐);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>flex-start<img src="/.io//2_flex-start.jpg" alt="flex-start"><br>baseline<img src="/.io//2_baseline.jpg" alt="baseline"></p>
+<p>flex-start<img src="2_flex-start.jpg" alt="flex-start"><br>baseline<img src="2_baseline.jpg" alt="baseline"></p>
 <p>6.align-content 指定交叉轴上多余空间 默认值为 stretch</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">  align-content: stretch / center / flex-start / flex-end / space-between / space-around</span><br><span class="line">  <span class="selector-tag">center</span>: (居中对齐, 没有多余空间)</span><br><span class="line">  <span class="selector-tag">flex-start</span>: (在交叉轴起始对齐,没有行行多余空间)</span><br><span class="line">  <span class="selector-tag">flex-end</span>: (于底对齐,没有多余空间)</span><br><span class="line">  <span class="selector-tag">space-between</span>: (各行之间留有空白)</span><br><span class="line">  <span class="selector-tag">space-around</span>: (各行之前之间之后都留有空白)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>stretch<img src="/.io//3_stretch.jpg" alt="stretch"><br>space-around<img src="/.io//3_space-around.jpg" alt="space-around"></p>
+<p>stretch<img src="3_stretch.jpg" alt="stretch"><br>space-around<img src="3_space-around.jpg" alt="space-around"></p>
 <h4 id="flex-item-属性"><a href="#flex-item-属性" class="headerlink" title="flex item 属性"></a>flex item 属性</h4><p>1.order 指定排列顺序, 可正可负, 值越小排越前. 默认都是 0</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son-2</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: -<span class="number">1</span> // 排在son-<span class="number">1</span>前面;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>2.flex-grow 当父元素存在剩余空间时, 可以用来指定子元素的拉伸比例. 默认值为 0, 负值无效<br><img src="/.io//4_flex-grow.jpg" alt="flex-grow"><br>3.flex-shrink 当父元素空间不足时, 可以用来指定子元素的收缩比例. 负值无效, 默认为 1, 即会收缩.<br>如果设置为 0, 就不收缩将保持原来的大小.<br><img src="/.io//5_flex-shrink.jpg" alt="flex-shrink"><br>4.flex-basis 为子元素分配初始大小, 默认值为 auto</p>
+<p>2.flex-grow 当父元素存在剩余空间时, 可以用来指定子元素的拉伸比例. 默认值为 0, 负值无效<br><img src="4_flex-grow.jpg" alt="flex-grow"><br>3.flex-shrink 当父元素空间不足时, 可以用来指定子元素的收缩比例. 负值无效, 默认为 1, 即会收缩.<br>如果设置为 0, 就不收缩将保持原来的大小.<br><img src="5_flex-shrink.jpg" alt="flex-shrink"><br>4.flex-basis 为子元素分配初始大小, 默认值为 auto</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son-2</span> &#123;</span><br><span class="line">  ...,</span><br><span class="line">  <span class="selector-tag">flex-grow</span>: 0;</span><br><span class="line">  <span class="selector-tag">flex-skrink</span>: 0;</span><br><span class="line">  flex-basis: 400px; // 结合上两个属性, 该元素400px宽度不会变化.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>5.flex 是 flex-grow flex-skrink flex-basis 的缩写, 此属性比较常用</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son-1</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son-2</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">1</span> auto;</span><br><span class="line">&#125;</span><br><span class="line">// son-1固定宽度100px, son-2自适应</span><br></pre></td></tr></table></figure>
 
-<p>6.align-self 指定单个 flex-item 允许更改交叉轴的对齐方式, 即垂直方向.<br><img src="/.io//6_align-self.jpg" alt="align-self"></p>
+<p>6.align-self 指定单个 flex-item 允许更改交叉轴的对齐方式, 即垂直方向.<br><img src="6_align-self.jpg" alt="align-self"></p>
 <h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>1.伪元素::first-line ::first-letter 在 flex-container 不起作用<br>2.float clear vertical-align 在 flex-item 不起作用</p>
 
       

@@ -16,25 +16,25 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面如今算法已经越发成为程序员的必修功法，本文旨在归纳各经典算法。阅读本文后，相信可以对十大算法有进一步的理解。 算法是否稳定：如果 a 原本在 b 前面，且 a=b，排序之后 a 仍然在 b 的前面，则为稳定算法 内排序：所有排序操作都在内存中完成 外排序：由于数据太大，把数据放在磁盘中，排序通过磁盘和内存的数据传输进行">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/.io//summary.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//type.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//bubble_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//bubble_2.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//bubble_3.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//selection_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//insertion_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//shell_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//merge_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//quick_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//heap_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//counting_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//bucket_1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//radix_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/summary.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/type.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/bubble_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/bubble_2.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/bubble_3.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/selection_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/insertion_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/shell_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/merge_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/quick_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/heap_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/counting_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/bucket_1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/radix_1.png">
 <meta property="og:updated_time" content="2023-10-23T07:51:24.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法核心框架整理(1)">
 <meta name="twitter:description" content="写在前面如今算法已经越发成为程序员的必修功法，本文旨在归纳各经典算法。阅读本文后，相信可以对十大算法有进一步的理解。 算法是否稳定：如果 a 原本在 b 前面，且 a=b，排序之后 a 仍然在 b 的前面，则为稳定算法 内排序：所有排序操作都在内存中完成 外排序：由于数据太大，把数据放在磁盘中，排序通过磁盘和内存的数据传输进行">
-<meta name="twitter:image" content="https://psilocine.github.io/.io//summary.png">
+<meta name="twitter:image" content="https://psilocine.github.io/2022/03/16/算法核心框架整理-1/summary.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -183,10 +183,10 @@
 <p><strong>时间复杂度</strong>：算法执行所耗费的时间</p>
 <p><strong>空间复杂度</strong>：运行完一个程序所需内存的大小</p>
 <p><strong>算法总结</strong></p>
-<p><img src="/.io//summary.png" alt="summary"></p>
+<p><img src="summary.png" alt="summary"></p>
 <p>上图名词解释：n 数据规模；k “桶”的个数；In-place 占用常数内存，不占用额外内存；Out-place 占用额外内存</p>
 <p><strong>分类</strong></p>
-<p><img src="/.io//type.png" alt="type"></p>
+<p><img src="type.png" alt="type"></p>
 <h3 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h3><p>通过两层循环重复遍历数据，一次比较两个相邻元素，如果排序错误就交换。该算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数据的顶端</p>
 <p><strong>实现（升序）</strong></p>
 <ol>
@@ -197,9 +197,9 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>即使两个元素相等也不会交换，前后顺序没有改变，所以冒泡排序是稳定排序算法</p>
-<p><img src="/.io//bubble_1.png" alt="bubble_1"></p>
-<p><img src="/.io//bubble_2.png" alt="bubble_2"></p>
-<p><img src="/.io//bubble_3.png" alt="bubble_3"></p>
+<p><img src="bubble_1.png" alt="bubble_1"></p>
+<p><img src="bubble_2.png" alt="bubble_2"></p>
+<p><img src="bubble_3.png" alt="bubble_3"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(n)</li>
@@ -215,7 +215,7 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>举个例子：序列 [5, 8, 5, 2, 9]，第一遍选择第一个元素 5 和第四个元素 2 交换，那么原序列中 2 个 5 的相对顺序就被破坏了，所以选择排序不是稳定排序算法</p>
-<p><img src="/.io//selection_1.png" alt="selection_1"></p>
+<p><img src="selection_1.png" alt="selection_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(n²)</li>
@@ -234,7 +234,7 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>插入排序是在一个已经有序的小序列上，从末尾每次插入一个元素，所以插入排序是稳定排序算法</p>
-<p><img src="/.io//insertion_1.png" alt="insertion_1"></p>
+<p><img src="insertion_1.png" alt="insertion_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(n)</li>
@@ -250,7 +250,7 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>举个例子，序列 [1, 2, 2, 1]，排序完为 [1, 1, 2, 2]，两个 2 的相对顺序被破坏，所以希尔排序是不稳定的排序算法</p>
-<p><img src="/.io//shell_1.png" alt="shell_1"></p>
+<p><img src="shell_1.png" alt="shell_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = $O(nlog^2n)$</li>
@@ -266,7 +266,7 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>归并排序是吧序列递归地分成短序列，没有涉及到元素相等的交换，所以是稳定的排序</p>
-<p><img src="/.io//merge_1.png" alt="merge_1"></p>
+<p><img src="merge_1.png" alt="merge_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(n)</li>
@@ -283,7 +283,7 @@
 <p><strong>稳定性</strong></p>
 <p>不考虑额外空间：基准与双指针 i, j 进行双向遍历，举个例子 [5 3 3 4 3 8 9 10 11]，基准 5 会与第五个元素 3 交换，破坏了 3 的相对顺序，所以是不稳定排序</p>
 <p>考虑额外空间：如下图代码所示，是稳定排序</p>
-<p><img src="/.io//quick_1.png" alt="quick_1"></p>
+<p><img src="quick_1.png" alt="quick_1"></p>
 <p><strong>空间负责度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(nlogn)</li>
@@ -299,7 +299,7 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>涉及到没有额外空间的位置交换，就是不稳定排序</p>
-<p><img src="/.io//heap_1.png" alt="heap_1"></p>
+<p><img src="heap_1.png" alt="heap_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(nlogn)</li>
@@ -315,7 +315,7 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>按顺序 push 进各自统计数组，所以是稳定排序算法</p>
-<p><img src="/.io//counting_1.png" alt="counting_1"></p>
+<p><img src="counting_1.png" alt="counting_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(n+k)</li>
@@ -332,7 +332,7 @@
 </ol>
 <p><strong>稳定型</strong></p>
 <p>按顺序 push 进各自桶数组，无涉及位置交换，所以是稳定的排序算法</p>
-<p><img src="/.io//bucket_1.png" alt="bucket_1"></p>
+<p><img src="bucket_1.png" alt="bucket_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(n+k)</li>
@@ -348,7 +348,7 @@
 </ol>
 <p><strong>稳定性</strong></p>
 <p>没有设计位置交换，是稳定排序算法</p>
-<p><img src="/.io//radix_1.png" alt="radix_1"></p>
+<p><img src="radix_1.png" alt="radix_1"></p>
 <p><strong>时间复杂度分析</strong></p>
 <ul>
 <li>最佳情况：T(n) = O(n * k)</li>

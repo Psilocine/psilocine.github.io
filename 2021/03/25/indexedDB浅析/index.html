@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面目前支撑的业务有大量数据存储在WebStorage的情况，考虑到WebStorage容量的限制，研究了一下浏览器提供的本地数据库————IndexedDB IndexedDB概述IndexedDB是一种底层的异步API，是一种在用户浏览器中持久存储数据的方法。它允许您在不考虑网络的可用性，创建具有丰富查询能力的可离线Web应用程序。对于在客户端存储大量的结构化数据和不需要持久在线网络连接的">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/.io//compatibility.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//indexedDB_object.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/compatibility.png">
+<meta property="og:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/indexedDB_object.png">
 <meta property="og:updated_time" content="2023-10-23T07:51:24.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IndexedDB浅析">
 <meta name="twitter:description" content="写在前面目前支撑的业务有大量数据存储在WebStorage的情况，考虑到WebStorage容量的限制，研究了一下浏览器提供的本地数据库————IndexedDB IndexedDB概述IndexedDB是一种底层的异步API，是一种在用户浏览器中持久存储数据的方法。它允许您在不考虑网络的可用性，创建具有丰富查询能力的可离线Web应用程序。对于在客户端存储大量的结构化数据和不需要持久在线网络连接的">
-<meta name="twitter:image" content="https://psilocine.github.io/.io//compatibility.png">
+<meta name="twitter:image" content="https://psilocine.github.io/2021/03/25/indexedDB浅析/compatibility.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -174,7 +174,7 @@
 <li>LocalStorage约在5MB左右（各家浏览器不同，IE浏览器约3M左右），且不提供搜索功能，不能建立自定义索引。</li>
 </ol>
 <p>为了解决痛点，IndexedDB就应邀诞生了。</p>
-<h5 id="IndexedDB目前的兼容性（2021-03）"><a href="#IndexedDB目前的兼容性（2021-03）" class="headerlink" title="IndexedDB目前的兼容性（2021.03）"></a>IndexedDB目前的兼容性（2021.03）</h5><p><img src="/.io//compatibility.png" alt="兼容性"></p>
+<h5 id="IndexedDB目前的兼容性（2021-03）"><a href="#IndexedDB目前的兼容性（2021-03）" class="headerlink" title="IndexedDB目前的兼容性（2021.03）"></a>IndexedDB目前的兼容性（2021.03）</h5><p><img src="compatibility.png" alt="兼容性"></p>
 <h5 id="IndexedDB的特性"><a href="#IndexedDB的特性" class="headerlink" title="IndexedDB的特性"></a>IndexedDB的特性</h5><ol>
 <li>键值对储存</li>
 </ol>
@@ -230,7 +230,7 @@
 <li><p>cmp(i, j)方法：比较两个主键的大小。返回整数（i === j为0、i &gt; j为1、i &lt; j为-1）</p>
 </li>
 </ul>
-<p><img src="/.io//indexedDB_object.png" alt="indexedDB对象"></p>
+<p><img src="indexedDB_object.png" alt="indexedDB对象"></p>
 <h5 id="IDBRequest对象："><a href="#IDBRequest对象：" class="headerlink" title="IDBRequest对象："></a>IDBRequest对象：</h5><p>操作请求，表示打开的数据库连接，数据库的操作都是通过这个对象执行的。indexedDB.open()和deleteDatabase()会返回这个对象。</p>
 <h5 id="IDBDatabase对象："><a href="#IDBDatabase对象：" class="headerlink" title="IDBDatabase对象："></a>IDBDatabase对象：</h5><p>通过IDBRequest对象的回调result属性获得。后面对数据库的操作，都通过这个对象完成。</p>
 <ul>

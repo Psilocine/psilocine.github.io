@@ -16,22 +16,22 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="GC 是什么Garbage Collection，程序工作过程中会产生很多垃圾，这些垃圾是程序不用的内存或者是之前用过了，以后不会再用的空间，而 GC 负责回收。不是所有的语言都有 GC，Java、JavaScript、Python 自带 GC；再比如 C、C++ 没有 GC，需要手动管理内存，相对麻烦 垃圾产生&amp;amp;为何回收我们知道写代码时创建一个基本类型、对象、函数……都是需要占用内存的">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/.io//1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//2.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//3.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//4.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//5.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//6.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//7.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//8.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//9.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//10.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//11.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/2.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/3.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/4.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/5.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/6.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/7.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/8.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/9.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/10.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/11.png">
 <meta property="og:updated_time" content="2023-10-23T07:51:24.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GC 垃圾回收">
 <meta name="twitter:description" content="GC 是什么Garbage Collection，程序工作过程中会产生很多垃圾，这些垃圾是程序不用的内存或者是之前用过了，以后不会再用的空间，而 GC 负责回收。不是所有的语言都有 GC，Java、JavaScript、Python 自带 GC；再比如 C、C++ 没有 GC，需要手动管理内存，相对麻烦 垃圾产生&amp;amp;为何回收我们知道写代码时创建一个基本类型、对象、函数……都是需要占用内存的">
-<meta name="twitter:image" content="https://psilocine.github.io/.io//1.png">
+<meta name="twitter:image" content="https://psilocine.github.io/2022/07/18/GC-垃圾回收/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
 <p>我们知道 JavaScript 的引用数据类型是保存在堆内存中，然后在栈内存中保存一个对堆内存中实际对象的引用。上图所示，{ name: ‘psilo’ } 对象没有了引用关系，如果不清理（回收），内存会越来越大。</p>
 <a id="more"></a>
 
-<p><img src="/.io//1.png" alt="figure"></p>
+<p><img src="1.png" alt="figure"></p>
 <h3 id="垃圾回收策略"><a href="#垃圾回收策略" class="headerlink" title="垃圾回收策略"></a>垃圾回收策略</h3><p>在 JavaScript 中，垃圾回收的机制是定期找出不再用到的内存（变量），然后释放其内存。</p>
 <p>常见策略：</p>
 <ol>
@@ -197,9 +197,9 @@
 <p>实现比较简单，只需要一个二进制（0 和 1）位就可以标记</p>
 <p><strong>缺点：</strong></p>
 <p>清除后剩余对象的内存位置是不变的，导致空闲内存空间是不连续的，出现了 内存碎片，这就牵扯除了内存分配问题</p>
-<p><img src="/.io//2.png" alt="figure"></p>
+<p><img src="2.png" alt="figure"></p>
 <p>假设我们新建对象分配内存时需要大小为 size，由于空闲内存是间断的、不连续的，则需要对空间内存列表进行一次单向遍历找出大于等于 size 的块才能为其分配</p>
-<p><img src="/.io//3.png" alt="figure"></p>
+<p><img src="3.png" alt="figure"></p>
 <p>那如何找到合适的块呢？有三种分配策略：</p>
 <ul>
 <li>First-fit，找到大于等于 size 的块立即返回</li>
@@ -213,7 +213,7 @@
 <li><strong>分配速度慢，</strong>即便是 First-fit，其操作仍是一个 O(n) 的操作</li>
 </ul>
 <p>归根结底，标记清除的缺点在于内存碎片化，<strong>标记整理（Mark-Compact）</strong>就可以有效地解决：在标记结束后，标记整理会将活着的对象向内存的一端移动，最后清理掉边界的内存</p>
-<p><img src="/.io//4.png" alt="figure"></p>
+<p><img src="4.png" alt="figure"></p>
 <h3 id="引用计数（Reference-Counting）"><a href="#引用计数（Reference-Counting）" class="headerlink" title="引用计数（Reference Counting）"></a>引用计数（Reference Counting）</h3><p>因为它问题很多，目前很少使用这种算法了。策略是跟踪记录每个变量值被使用的次数</p>
 <ul>
 <li>当声明一个变量并且将一个引用类型赋值给该变量的时候这个值的引用次数就为 1</li>
@@ -236,10 +236,10 @@
 <p>标记清除在每次回收时都要检查内存中所有对象，分代进行 GC 效率会更好，且一些大、老、存活时间厂的对象来说不需要频繁进行清理。</p>
 <p>V8 将堆内存分为新生代和老生代两区域，采用不同的 GC 策略管理</p>
 <p>新生代的对象为存活时间较短的对象，简单来说就是新产生的对象，通常只支持 1 ～ 8M 的容量，而老生代的对象为存活事件较长或常驻内存的对象。</p>
-<p><img src="/.io//5.png" alt="figure"></p>
+<p><img src="5.png" alt="figure"></p>
 <p><strong>新生代垃圾回收</strong></p>
 <p>通过一个 Scavenge 算法进行垃圾回收，将堆内存一分为二，一个是处于使用状态的空间我们暂且称为 使用区，一个是处于闲置状态的空间称之为 空闲区</p>
-<p><img src="/.io//6.png" alt="figure"></p>
+<p><img src="6.png" alt="figure"></p>
 <p>新加入的对象都会存放到使用区，当使用区快被写满时，就需要执行一次垃圾清理操作</p>
 <p>开始回收时，新生代垃圾回收器会对使用区中的活动对象做标记，标记完成后将使用区的活动对象复制进空闲区并进行排序，随后进入垃圾清理阶段，即将非活动对象占用的空间清理掉。最后进行角色互换，把原来的使用区变成空闲区，把原来的空闲区变成使用区</p>
 <p>当一个对象经过多次复制后依赖存活，它将会被认为是生命周期较长的对象，随后会被移动到老生代中，采用老生代的垃圾回收策略进行管理</p>
@@ -251,7 +251,7 @@
 <p><strong>并行回收（Parallel）</strong></p>
 <p>在介绍并行之前，要了解 全停顿（Stop-The-World）概念，我们都知道 JavaScript 是一门单线程的语言，它是运行在主线程上的，那在进行垃圾回收时就会阻塞 JavaScript 脚本的执行，需等待垃圾回收完毕后再恢复脚本执行，称为全停顿</p>
 <p>比如一次 GC 需要 60ms，那我们的应用逻辑就得暂停 60ms，所谓并行，指的是垃圾回收器在主线程上执行的过程中，开启多个辅助线程，同时执行同样的回收工作</p>
-<p><img src="/.io//7.png" alt="figure"></p>
+<p><img src="7.png" alt="figure"></p>
 <p>简单来说，使用并行回收，加入本来主线程一个人干活，它需要 3s，现在叫上 2 个辅助线程一起干活，加上多人协同（同步开销）的时间（0.5s），本来需要 3s 的活现在 1.5s 就可以干完</p>
 <p>新生代对象空间就采用并行策略，在执行垃圾回收的过程中，会启动多个线程来负责新生代中的垃圾清理操作，这些线程同时将对象空间中的数据移动到空闲区域，这个过程中由于数据地址会发生改变，所以还需要同步更新引用这些对象的指针，即并行回收</p>
 <p><strong>增量标记与惰性清理</strong></p>
@@ -259,7 +259,7 @@
 <p>所以为了减少全停顿的时间，在 2011 年，V8 对老生代的标记进行老优化，从全停顿标记切换到增量标记</p>
 <p><strong>什么是增量标记</strong></p>
 <p>增量就是将一次 GC 标记的过程，分成了很多小步，每执行完一小步就让应用逻辑执行一会，这样交替多次后完成一轮 GC</p>
-<p><img src="/.io//8.png" alt="figure"></p>
+<p><img src="8.png" alt="figure"></p>
 <p>将一次完整的 GC 标记分次执行，那么在每一小次 GC 标记执行完后如何暂停下来去执行任务程序，而后又怎么恢复呢？假如我们在一次完整的 GC 标记分块暂停后，执行任务程序时内存中标记好的对象引用关系被修改老又怎么办呢？V8 针对这两个问题对应的解决方案分别是 三色标记法 和 写屏障</p>
 <p><strong>三色标记法</strong></p>
 <p>我们知道老生代是采用标记清理算法，而上文的标记清理中我们说过，也就是在没有采用增量算法前，单纯使用黑色和白色来标记数据就可以来，在执行一次完整的 GC 标记前，垃圾回收器会将所有的数据置为白色，然后垃圾回收器在从一组根对象触发，将所有能访问到的数据标记为黑色，遍历结束后，标记为白色的对象就是待清理对象</p>
@@ -270,11 +270,11 @@
 <li>灰色指的是自身被标记，成员变量（该对象的引用对象）未被标记</li>
 <li>黑色指自身和成员皆被标记</li>
 </ul>
-<p><img src="/.io//9.png" alt="figure"></p>
+<p><img src="9.png" alt="figure"></p>
 <p>直到没有可标记灰色的对象时，那么剩下的白色对象就是无法到达的，等待回收（如上图 C、E）</p>
 <p><strong>写屏障（增量中修改引用）</strong></p>
 <p>一次完整的 GC 标记分块暂停后，执行任务程序时内存中标记好的对象引用关系被修改了</p>
-<p><img src="/.io//10.png" alt="figure"></p>
+<p><img src="10.png" alt="figure"></p>
 <p>修改后，没有灰色对象，新修改的白色对象 D 将在次轮 GC 的清理阶段被回收。为了解决这个问题， V8 增量回收使用 写屏障（Write-barrier）机制，一旦又黑色对象引用白色对象，该机制会强制将引用的白色对象改为灰色，保证下一次增量 GC 标记阶段可以正确标记，这个机制也称做 强三色不变性</p>
 <p><strong>惰性清理</strong></p>
 <p>增量标记其实只是对活动对象和非活动对象进行标记，对于真正的清理释放内存 V8 采用的是惰性清理（Lazy Sweeping）</p>
@@ -283,7 +283,7 @@
 <p>增量标记与惰性清理的出现，使得主线程的停顿时间大大减少了，让用户与浏览器交互的过程变得更加流畅。但是由于每个小的增量标记之间执行了 JavaScript 代码，堆中的对象指针可能发生变化，需要使用写屏障计数来记录引用关系的变化，所以增量标记缺点也很明显：</p>
 <p>首先是并没有减少主线程的总暂停时间，甚至会略微增加，其次由于写屏障机制的成本，增量标记可能会降低应用程序的吞吐量</p>
 <h3 id="并发回收（Concurrent）"><a href="#并发回收（Concurrent）" class="headerlink" title="并发回收（Concurrent）"></a>并发回收（Concurrent）</h3><p>并行回收依然会阻塞主线程，增量标记也会增加总暂停时间、降低应用程序吞吐量两个缺点。并发回收能在主线程执行 JavaScript 过程中，辅助线程能够在后台完成执行垃圾回收的操作，辅助线程在执行垃圾回收的时候，主线程也可以自由执行而不会被挂起</p>
-<p><img src="/.io//11.png" alt="figure"></p>
+<p><img src="11.png" alt="figure"></p>
 <p>辅助线程在执行垃圾回收的时候，主线程也可以自由执行而不会被挂起，这是并发的优点也是并发实现的难点，因为它需要考虑主线程在执行 JavaScript 时，堆中对象引用关系随时都有可能发生变化，这时辅助线程之前做的一些标记活着正在进行的标记就会有所改变，所以它需要额外实现一些读写锁机制来控制</p>
 <p><strong>V8 中 GC 优化</strong></p>
 <p>我们说过新生代垃圾回收器，使用并行回收可以很好的增加垃圾回收的效率，那老生代垃圾回收器是用哪种策略呢？上面说来并行回收、增量标记与惰性清理、并发回收这几种回收方式来提高效率、优化体验，其实老生代垃圾回收器都是融合使用的。</p>

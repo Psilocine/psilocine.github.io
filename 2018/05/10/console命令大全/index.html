@@ -16,29 +16,29 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面console.log, console.time相信大家都不陌生, 平时除了打断点就是打log来调试, 可谓是居家旅行必备神器. 今天就来扒扒除了以上常见的还有哪些可能其貌不扬的命令. log log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/.io//log_1.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//log_4.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//log_2.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//log_3.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//log_5.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//time_1.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//group_1.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//group_2.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//dir_2.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//dir_3.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//dir_1.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//assert_1.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//assert_2.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//count_1.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//table_1.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//table_2.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//table_3.jpg">
-<meta property="og:image" content="https://psilocine.github.io/.io//trace_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/log_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/log_4.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/log_2.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/log_3.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/log_5.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/time_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/group_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/group_2.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/dir_2.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/dir_3.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/dir_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/assert_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/assert_2.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/count_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/table_1.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/table_2.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/table_3.jpg">
+<meta property="og:image" content="https://psilocine.github.io/2018/05/10/console命令大全/trace_1.jpg">
 <meta property="og:updated_time" content="2023-10-23T07:51:24.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console命令大全">
 <meta name="twitter:description" content="写在前面console.log, console.time相信大家都不陌生, 平时除了打断点就是打log来调试, 可谓是居家旅行必备神器. 今天就来扒扒除了以上常见的还有哪些可能其貌不扬的命令. log log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.">
-<meta name="twitter:image" content="https://psilocine.github.io/.io//log_1.jpg">
+<meta name="twitter:image" content="https://psilocine.github.io/2018/05/10/console命令大全/log_1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -181,34 +181,34 @@
         <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>console.log, console.time相信大家都不陌生, 平时除了打断点就是打log来调试, 可谓是居家旅行必备神器. 今天就来扒扒除了以上常见的还有哪些可能其貌不扬的命令.</p>
 <h4 id="log"><a href="#log" class="headerlink" title="log"></a>log</h4><ol>
 <li>log是笔者平日里用得最多的命令了, 如下图一, 可以直接打印出我们需要的变量; 可以定死内容打印出来用来知道是否执行至此; 可以结合字符串更清晰地在控制台找到输出内容.<a id="more"></a>
-<img src="/.io//log_1.jpg" alt="log_1"></li>
-<li>此命令大家很熟悉了, 只有一点需要注意: 结合字符串时, 除了和对象共用会出现[object Object]而显示不出正确内容外, 和其他的类型都能良好搭配. 这是因为object类型和string类型相加时, 会触发toString()方法(其他类型也会.<br><img src="/.io//log_4.jpg" alt="log_4"><br>除了log外, 还有info, warn, error, 其实和log本质是一样的, 只不过在输出是加个icon和背景色.<br><img src="/.io//log_2.jpg" alt="log_2"><br>在Ff火狐下, info也有图标.<br><img src="/.io//log_3.jpg" alt="log_3"></li>
-<li>log还支持占位符, 如下图. 但只支持字符串（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）<br><img src="/.io//log_5.jpg" alt="log_5"></li>
+<img src="log_1.jpg" alt="log_1"></li>
+<li>此命令大家很熟悉了, 只有一点需要注意: 结合字符串时, 除了和对象共用会出现[object Object]而显示不出正确内容外, 和其他的类型都能良好搭配. 这是因为object类型和string类型相加时, 会触发toString()方法(其他类型也会.<br><img src="log_4.jpg" alt="log_4"><br>除了log外, 还有info, warn, error, 其实和log本质是一样的, 只不过在输出是加个icon和背景色.<br><img src="log_2.jpg" alt="log_2"><br>在Ff火狐下, info也有图标.<br><img src="log_3.jpg" alt="log_3"></li>
+<li>log还支持占位符, 如下图. 但只支持字符串（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）<br><img src="log_5.jpg" alt="log_5"></li>
 </ol>
 <h4 id="time"><a href="#time" class="headerlink" title="time"></a>time</h4><ol>
-<li>此命令可以用来知道一段代码所耗时间, 需要结合console.timeEnd()来闭合代码段. 需要注意的是, 两行命令的参数变量名需要一样, 如下是test, 才能正确判断代码的起始结束位置<br><img src="/.io//time_1.jpg" alt="time_1"></li>
+<li>此命令可以用来知道一段代码所耗时间, 需要结合console.timeEnd()来闭合代码段. 需要注意的是, 两行命令的参数变量名需要一样, 如下是test, 才能正确判断代码的起始结束位置<br><img src="time_1.jpg" alt="time_1"></li>
 </ol>
 <h4 id="group"><a href="#group" class="headerlink" title="group"></a>group</h4><ol>
-<li>该命令结合console.groupEnd()可以起到分组的作用.<br><img src="/.io//group_1.jpg" alt="group_1"></li>
-<li>有时候代码log太多会眼花缭乱, 有了这个可以快速定位到自己想看的log.<br><img src="/.io//group_2.jpg" alt="group_2"></li>
+<li>该命令结合console.groupEnd()可以起到分组的作用.<br><img src="group_1.jpg" alt="group_1"></li>
+<li>有时候代码log太多会眼花缭乱, 有了这个可以快速定位到自己想看的log.<br><img src="group_2.jpg" alt="group_2"></li>
 <li>需要注意的有两点, 结束命令不用像time指令加参数; 其二是如果把”group”换成”groupCollapsed”, 则默认为折叠运行结果.</li>
 </ol>
 <h4 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h4><ol>
-<li>用来查看对象的信息, 但在chrome浏览器下好像会展示折叠的状态, 因此和log似乎没差? 在Ff下, dir命令可以自动展开, 比较一目了然.<br><img src="/.io//dir_2.jpg" alt="dir_2"><br><img src="/.io//dir_3.jpg" alt="dir_3"></li>
-<li>如果查看Dom元素, console.log()以HTML的形式输出, 而console.dir()则会以JSON对象的形式输出.(在chrome下, 实测在Ff下都是以json对象输出)<br><img src="/.io//dir_1.jpg" alt="dir_1"></li>
+<li>用来查看对象的信息, 但在chrome浏览器下好像会展示折叠的状态, 因此和log似乎没差? 在Ff下, dir命令可以自动展开, 比较一目了然.<br><img src="dir_2.jpg" alt="dir_2"><br><img src="dir_3.jpg" alt="dir_3"></li>
+<li>如果查看Dom元素, console.log()以HTML的形式输出, 而console.dir()则会以JSON对象的形式输出.(在chrome下, 实测在Ff下都是以json对象输出)<br><img src="dir_1.jpg" alt="dir_1"></li>
 </ol>
 <h4 id="assert"><a href="#assert" class="headerlink" title="assert"></a>assert</h4><ol>
-<li>console.assert()类似于单元测试中的断言, 当表达式为false, 输出错误并抛出一个异常. 但是如果你的代码有多个assert命令, 会显得难以区分. 因此assert还支持传第二个参数, 当有输出时依仗第二个参数的值.<br><img src="/.io//assert_1.jpg" alt="assert_1"><br><img src="/.io//assert_2.jpg" alt="assert_2"></li>
+<li>console.assert()类似于单元测试中的断言, 当表达式为false, 输出错误并抛出一个异常. 但是如果你的代码有多个assert命令, 会显得难以区分. 因此assert还支持传第二个参数, 当有输出时依仗第二个参数的值.<br><img src="assert_1.jpg" alt="assert_1"><br><img src="assert_2.jpg" alt="assert_2"></li>
 </ol>
 <h4 id="count"><a href="#count" class="headerlink" title="count"></a>count</h4><ol>
 <li>调试代码时，我们经常需要知道一段代码被执行了多少次(当然可以用log), 但是count命令存在的本质就是为了计数. 还有log如果是在一起的话, 会累加成一行.</li>
-<li>count命令也可以传值来作为label, 当然不传也会有个default的label.<br><img src="/.io//count_1.jpg" alt="count_1"></li>
+<li>count命令也可以传值来作为label, 当然不传也会有个default的label.<br><img src="count_1.jpg" alt="count_1"></li>
 </ol>
 <h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><ol>
-<li>table命令能轻松将json表格化, 让开发者更直观地看到数据. 在chrome浏览器下, table head还支持正序倒序的排列, 十分方便.<br><img src="/.io//table_1.jpg" alt="table_1"></li>
-<li>值得注意的是, 在chrome下如果json没有该属性会显示空, 值是””, 显示””, 只有在值是undefined才会显示undefined; 而在Ff下, 没有属性显示undefined, 值是””显示空, 值是undefined显示undefined.<br><img src="/.io//table_2.jpg" alt="table_2"><br><img src="/.io//table_3.jpg" alt="table_3"></li>
+<li>table命令能轻松将json表格化, 让开发者更直观地看到数据. 在chrome浏览器下, table head还支持正序倒序的排列, 十分方便.<br><img src="table_1.jpg" alt="table_1"></li>
+<li>值得注意的是, 在chrome下如果json没有该属性会显示空, 值是””, 显示””, 只有在值是undefined才会显示undefined; 而在Ff下, 没有属性显示undefined, 值是””显示空, 值是undefined显示undefined.<br><img src="table_2.jpg" alt="table_2"><br><img src="table_3.jpg" alt="table_3"></li>
 </ol>
-<h4 id="trace"><a href="#trace" class="headerlink" title="trace"></a>trace</h4><p>console.trace()用来追踪函数的调用轨迹, 可谓是神器, 特别是维护大型项目的时候.<br><img src="/.io//trace_1.jpg" alt="trace_1"></p>
+<h4 id="trace"><a href="#trace" class="headerlink" title="trace"></a>trace</h4><p>console.trace()用来追踪函数的调用轨迹, 可谓是神器, 特别是维护大型项目的时候.<br><img src="trace_1.jpg" alt="trace_1"></p>
 
       
 

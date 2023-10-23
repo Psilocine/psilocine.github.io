@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="Psilo&#39;s TecBlog">
 <meta property="og:description" content="写在前面我们都知道 http 是无状态的，上一次请求和下一次请求没有关联。但是很多时候是需要状态来识别用户的，比如一些个人信息如收藏夹、购物车等 下面会讨论三种鉴权的方案：  session + cookie token JWT">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://psilocine.github.io/.io//1.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//2.png">
-<meta property="og:image" content="https://psilocine.github.io/.io//3.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/26/浅析前端鉴权/1.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/26/浅析前端鉴权/2.png">
+<meta property="og:image" content="https://psilocine.github.io/2022/07/26/浅析前端鉴权/3.png">
 <meta property="og:updated_time" content="2023-10-23T07:51:24.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅析前端鉴权">
 <meta name="twitter:description" content="写在前面我们都知道 http 是无状态的，上一次请求和下一次请求没有关联。但是很多时候是需要状态来识别用户的，比如一些个人信息如收藏夹、购物车等 下面会讨论三种鉴权的方案：  session + cookie token JWT">
-<meta name="twitter:image" content="https://psilocine.github.io/.io//1.png">
+<meta name="twitter:image" content="https://psilocine.github.io/2022/07/26/浅析前端鉴权/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Psilo&#39;s TecBlog" type="application/atom+xml">
   
@@ -173,7 +173,7 @@
 <a id="more"></a>
 
 <h3 id="服务端存储的-session-cookie"><a href="#服务端存储的-session-cookie" class="headerlink" title="服务端存储的 session + cookie"></a>服务端存储的 session + cookie</h3><p>session 是基于 cookie 实现，session 存在服务端，sessionId 则存储在客户端的 cookie 中</p>
-<p><img src="/.io//1.png" alt="figure"></p>
+<p><img src="1.png" alt="figure"></p>
 <p>如图：请求自动带上 cookie，两次请求都可以找到 id 为 1 对应的 session</p>
 <p><strong>问题</strong></p>
 <ul>
@@ -184,7 +184,7 @@
 <p><strong>总结</strong></p>
 <p>session + cookie 给 http 添加状态的方案是服务端保存 session 数据，然后把 id 放入 cookie 返回，cookie 是自动携带的，每个请求可以通过 cookie 的 id 查找到对应的 session，从而实现请求的标识。但是有 CSRF、分布式 session、跨域的问题</p>
 <h3 id="客户端存储的-token"><a href="#客户端存储的-token" class="headerlink" title="客户端存储的 token"></a>客户端存储的 token</h3><p>token 存储在 cookie 或 localStorage，请求服务端时手动携带在 header</p>
-<p><img src="/.io//2.png" alt="figure"></p>
+<p><img src="2.png" alt="figure"></p>
 <p>简单的 token 组成：</p>
 <ul>
 <li>uid</li>
@@ -204,7 +204,7 @@
 <p>header、payload、signature，三部分别分做 base64 加密，然后通过 ‘.’ 连接</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">authorization: barer xxxxx.xxxxx.xxxx</span><br></pre></td></tr></table></figure>
 
-<p><img src="/.io//3.png" alt="figure"></p>
+<p><img src="3.png" alt="figure"></p>
 <ul>
 <li>header 保存当前的加密算法和 type，一般是 HS256</li>
 <li>payload 保存具体需要存储的数据</li>
